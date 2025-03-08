@@ -1,0 +1,167 @@
+body {
+    background-color: #f8f8f0; /* Color de fondo */
+    color: #a4b4ad; /* Color del texto */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #398965; /* Color del encabezado */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo h1 {
+    color: #f1efb5; /* Color del logo */
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #f1efb5; /* Color de los enlaces */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #dad87a; /* Color al pasar el mouse */
+}
+
+.hero {
+    position: relative;
+    height: 400px; /* Ajusta la altura según sea necesario */
+    background-image: url('img/abaco.jpeg'); /* Cambia esto por la ruta de tu imagen */
+    background-size: contain; /* La imagen se ajustará dentro de la sección */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    overflow: hidden;
+}
+
+.hero-content {
+    position: absolute;
+    top: 0; /* Comienza desde la parte superior */
+    left: -100%; /* Comienza fuera de la pantalla a la izquierda */
+    width: 50%; /* Ocupa la mitad de la sección */
+    height: 100%; /* Ocupa toda la altura de la sección */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    padding: 20px;
+    color: white;
+    display: flex; /* Usar flexbox para el contenido */
+    flex-direction: column; /* Colocar el contenido en columna */
+    justify-content: center; /* Centrar verticalmente */
+    animation: slideIn 1s forwards; /* Animación de entrada */
+}
+
+@keyframes slideIn {
+    from {
+        left: -100%; /* Comienza fuera de la pantalla a la izquierda */
+    }
+    to {
+        left: 0; /* Posición final */
+    }
+}
+
+.info-suggestions {
+    padding: 50px 20px;
+    text-align: center; /* Centrar el texto */
+}
+
+.suggestion-card {
+    background-color: #efefef; /* Color de fondo para la tarjeta de sugerencias */
+    border: 2px solid #398965; /* Color del borde */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0; /* Ajustar márgenes */
+    display: inline-block; /* Para que se comporte como un bloque en línea */
+    width: 80%; /* Ajusta el ancho según sea necesario */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones para la animación */
+}
+
+.suggestion-card:hover {
+    transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
+}
+
+.info-section {
+    display: grid; /* Usar grid para una disposición simétrica */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 10px; /* Espacio reducido entre las tarjetas */
+    padding: 20px; /* Ajustar el padding general */
+    justify-items: center; /* Centrar las tarjetas en la cuadrícula */
+}
+
+.info-card {
+    background-color: white;
+    border: 2px solid #398965; /* Color del borde */
+    border-radius: 10px;
+    padding: 15px; /* Ajustar el padding interno */
+    height: 150px; /* Altura fija para las tarjetas */
+    width: 300px; /* Aumentar el ancho de las tarjetas */
+    display: flex; /* Usar flexbox para el contenido */
+    flex-direction: column; /* Colocar el contenido en columna */
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones para la animación */
+}
+
+.info-card:hover {
+    transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
+}
+
+section {
+    padding: 50px 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #398965; /* Color del pie de página */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #a4b4ad; /* Color del borde */
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ef8639; /* Color del botón */
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #dad87a; /* Color al pasar el mouse */
+}
