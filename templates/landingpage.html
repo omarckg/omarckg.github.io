@@ -15,11 +15,27 @@
                 <h1>Banco de Alimentos</h1>
             </div>
             <nav class="navbar-menu">
-                <a href="#inicio"><i class="fas fa-home"></i> Inicio</a>
-                <a href="#mision"><i class="fas fa-heart"></i> Nuestra Misión</a>
-                <a href="#ayuda"><i class="fas fa-hands-helping"></i> Cómo Ayudar</a>
-                <a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a>
-                <a href="#" class="btn-donar"><i class="fas fa-gift"></i> Donar</a>
+                <a href="#inicio">⌂ Inicio</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-trigger">⚡ Nosotros <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#valores">✧ Nuestros Valores</a>
+                        <a href="#lideres">✦ Nuestros Líderes</a>
+                        <a href="#informes">⋆ Informes de Gestión</a>
+                    </div>
+                </div>
+                <a href="#ayuda">✧ Ayúdanos a ayudar</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-trigger">⋆ Beneficiarios <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#quiero-ser">✧ Quiero ser Beneficiario</a>
+                        <a href="#soy-beneficiario">✦ Soy Beneficiario</a>
+                        <a href="#recetario">⋆ Recetario</a>
+                    </div>
+                </div>
+                <a href="#blog">✦ Blog</a>
+                <a href="#regala">⚡ Regala Generosidad</a>
+                <a href="#contacto">✧ Contáctenos</a>
             </nav>
         </div>
     </header>
@@ -27,6 +43,7 @@
     <div class="carousel">
         <div class="carousel-inner">
             <div class="carousel-slide active" style="background-image: url('img/bq.jpg')">
+                <img src="img/empleados3.png" alt="Empleados" class="carousel-overlay-image">
                 <div class="carousel-content">
                     <h2 class="shatter-text">Juntos Contra el Hambre</h2>
                     <p class="fade-in-text">Tu apoyo hace la diferencia en nuestra comunidad</p>
@@ -34,15 +51,18 @@
                 <div class="shatter-overlay"></div>
             </div>
             <div class="carousel-slide" style="background-image: url('img/baq2.jpeg')">
+                <img src="img/empleados4.png" alt="Empleados" class="carousel-overlay-image">
                 <div class="carousel-content">
                     <h2>Voluntariado</h2>
                     <p>Únete a nuestra causa y ayuda a quienes más lo necesitan</p>
                 </div>
             </div>
             <div class="carousel-slide" style="background-image: url('img/baq3.jpg')">
-                <div class="carousel-content">
+                <img src="img/niños.webp" alt="Niños beneficiarios" class="carousel-overlay-image">
+                <div class="carousel-content" style="bottom: 100px;">
                     <h2>Donaciones</h2>
                     <p>Cada aporte cuenta para combatir la inseguridad alimentaria</p>
+                    <a href="#" class="carousel-btn">¡Dona Ya!</a>
                 </div>
             </div>
         </div>
@@ -181,6 +201,21 @@
             </div>
             <div class="donante-logo">
                 <img src="img/donantes/meals.png" alt="Meals de Colombia S.A.">
+            </div>
+        </div>
+    </section>
+
+    <section class="donaciones-especie-section">
+        <div class="donaciones-especie-container">
+            <div class="donaciones-especie-content">
+                <div class="donaciones-especie-text">
+                    <h2>¿ERES UNA EMPRESA Y TIENES <span class="highlight">PRODUCTOS QUE NO ALCANZASTE A VENDER?</span></h2>
+                    <p>En ABACO también puedes hacer donaciones en especie. <span class="highlight-orange">Da una segunda oportunidad a estos alimentos que se quedaron de la temporada y brinda comida a las miles de familias vulnerables que hoy pasan hambre.</span></p>
+                    <p>Evitando el desperdicio de alimentos hoy, podemos erradicar el hambre del mañana.</p>
+                </div>
+                <div class="donaciones-especie-image">
+                    <img src="img/donaciones-especie.jpg" alt="Bolsa con verduras y frutas frescas">
+                </div>
             </div>
         </div>
     </section>
