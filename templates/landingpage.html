@@ -5,84 +5,233 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco de Alimentos</title>
     <link rel="stylesheet" href="diseño.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
+    <header class="navbar-modern">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <img src="img/logo.png" alt="Logo Banco de Alimentos">
                 <h1>Banco de Alimentos</h1>
             </div>
-            <ul>
-                <li><a href="#mision">Nuestra Misión</a></li>
-                <li><a href="#ayuda">Cómo Puedes Ayudar</a></li>
-                <li><a href="#contacto">Contáctanos</a></li>
-            </ul>
-            <div class="register">
-                <a href="#" class="btn">Registrar</a>
-            </div>
-        </nav>
+            <nav class="navbar-menu">
+                <a href="#inicio"><i class="fas fa-home"></i> Inicio</a>
+                <a href="#mision"><i class="fas fa-heart"></i> Nuestra Misión</a>
+                <a href="#ayuda"><i class="fas fa-hands-helping"></i> Cómo Ayudar</a>
+                <a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a>
+                <a href="#" class="btn-donar"><i class="fas fa-gift"></i> Donar</a>
+            </nav>
+        </div>
     </header>
-    
-    <main>
-        <div class="hero">
-            <div class="hero-content">
-                <h2>Ayudamos a Combatir el Hambre</h2>
-                <p>Tu apoyo puede marcar la diferencia en la vida de muchas familias.</p>
+
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-slide active" style="background-image: url('img/bq.jpg')">
+                <div class="carousel-content">
+                    <h2 class="shatter-text">Juntos Contra el Hambre</h2>
+                    <p class="fade-in-text">Tu apoyo hace la diferencia en nuestra comunidad</p>
+                </div>
+                <div class="shatter-overlay"></div>
+            </div>
+            <div class="carousel-slide" style="background-image: url('img/baq2.jpeg')">
+                <div class="carousel-content">
+                    <h2>Voluntariado</h2>
+                    <p>Únete a nuestra causa y ayuda a quienes más lo necesitan</p>
+                </div>
+            </div>
+            <div class="carousel-slide" style="background-image: url('img/slide3.jpg')">
+                <div class="carousel-content">
+                    <h2>Donaciones</h2>
+                    <p>Cada aporte cuenta para combatir la inseguridad alimentaria</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-control prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-control next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="carousel-indicators">
+            <span class="carousel-indicator active"></span>
+            <span class="carousel-indicator"></span>
+            <span class="carousel-indicator"></span>
+        </div>
+    </div>
+
+    <div class="donation-hero fade-up">
+        <div class="donation-hero-buttons">
+            <a href="#" class="hero-donation-btn">¡Dona Ya!</a>
+            <a href="#" class="hero-donation-btn">Dona Mensual</a>
+        </div>
+    </div>
+
+    <div class="main-cards">
+        <div class="card fade-up" style="animation-delay: 0.2s">
+            <div class="card-content">
+                <h2>BONOS DE CONDOLENCIAS Y GENEROSIDAD</h2>
+                <a href="#" class="btn-saber-mas">Saber más</a>
             </div>
         </div>
 
-        <section id="sugerencias" class="info-suggestions">
-            <h2>Sugerencias de Información</h2>
-            <div class="suggestion-card">
-                <h3>Cómo Hacer una Donación</h3>
-                <p>Descubre las diferentes maneras en que puedes contribuir a nuestra causa.</p>
+        <div class="card fade-up" style="animation-delay: 0.4s">
+            <div class="card-content">
+                <h2>QUIERO SER BENEFICIARIO</h2>
+                <a href="#" class="btn-saber-mas">Saber más</a>
             </div>
-        </section>
+        </div>
 
-        <section id="informacion" class="info-section">
-            <div class="info-card">
-                <h3>Donaciones</h3>
-                <p>Tu donación puede ayudar a combatir el hambre en nuestra comunidad.</p>
+        <div class="card fade-up" style="animation-delay: 0.6s">
+            <div class="card-content">
+                <h2>QUIERO SER VOLUNTARIO</h2>
+                <a href="#" class="btn-saber-mas">Saber más</a>
             </div>
-            <div class="info-card">
-                <h3>Voluntariado</h3>
-                <p>Únete a nosotros como voluntario y marca la diferencia.</p>
-            </div>
-            <div class="info-card">
-                <h3>Eventos</h3>
-                <p>Participa en nuestros eventos y ayuda a crear conciencia.</p>
-            </div>
-            <div class="info-card">
-                <h3>Colaboraciones</h3>
-                <p>Descubre cómo puedes colaborar con nosotros para hacer un cambio.</p>
-            </div>
-        </section>
+        </div>
+    </div>
 
-        <section id="mision">
-            <h2>Nuestra Misión</h2>
-            <p>Proporcionar alimentos a quienes más lo necesitan y promover la seguridad alimentaria en nuestra comunidad.</p>
-        </section>
-        <section id="ayuda">
-            <h2>Cómo Puedes Ayudar</h2>
-            <ul>
-                <li>Donar alimentos no perecederos</li>
-                <li>Voluntariado en nuestras instalaciones</li>
-                <li>Realizar donaciones monetarias</li>
-            </ul>
-        </section>
-        <section id="contacto">
-            <h2>Contáctanos</h2>
-            <form>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-    </main>
+    <section class="stats-section">
+        <div class="stats-left-content">
+            <div class="stats-header">
+                <h2>¡SÚMATE!</h2>
+                <h3>AYUDEMOS SIN DESCANSO</h3>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-item fade-up" style="animation-delay: 0.2s">
+                    <div class="stat-number">41.854</div>
+                    <div class="stat-label">Toneladas de alimentos entregados</div>
+                </div>
+                
+                <div class="stat-item fade-up" style="animation-delay: 0.4s">
+                    <div class="stat-number">1.164.483</div>
+                    <div class="stat-label">Personas beneficiadas</div>
+                </div>
+                
+                <div class="stat-item fade-up" style="animation-delay: 0.6s">
+                    <div class="stat-number">3.805</div>
+                    <div class="stat-label">Organizaciones atendidas</div>
+                </div>
+                
+                <div class="stat-item fade-up" style="animation-delay: 0.8s">
+                    <div class="stat-number">1.163.000</div>
+                    <div class="stat-label">Kilos de CO2 dejados de emitir</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="donation-form fade-up">
+            <h3>¡EL HAMBRE NO ESPERA!</h3>
+            <p>Ayúdanos a llevar alimento a la mesa de la población más vulnerable.</p>
+            
+            <div class="donation-options">
+                <div class="donation-type">
+                    <button class="active">Única</button>
+                    <button>Mensual</button>
+                </div>
+                
+                <div class="donation-amounts">
+                    <div class="amount-option">
+                        <span class="currency">COP</span>
+                        <span class="amount">$30.000,00</span>
+                    </div>
+                    <div class="amount-option active">
+                        <span class="currency">COP</span>
+                        <span class="amount">$50.000,00</span>
+                    </div>
+                    <div class="amount-option">
+                        <span class="currency">COP</span>
+                        <span class="amount">$150.000,00</span>
+                    </div>
+                </div>
+                
+                <div class="custom-amount">
+                    <p>También puedes elegir otro monto:</p>
+                    <div class="amount-input">
+                        <span>$</span>
+                        <input type="number" placeholder="50000" value="50000">
+                        <span>COP</span>
+                    </div>
+                </div>
+                
+                <p class="donation-info">$ 50000.00 Brindas alimentación sana y de calidad una familia.</p>
+                
+                <button class="donate-button">¡DONA AQUÍ!</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="donantes-section">
+        <h2>NUESTROS DONANTES</h2>
+        <div class="donantes-container fade-up">
+            <div class="donante-logo">
+                <img src="img/donantes/cruz-verde.png" alt="Cruz Verde">
+            </div>
+            <div class="donante-logo">
+                <img src="img/donantes/upfield.png" alt="Upfield">
+            </div>
+            <div class="donante-logo">
+                <img src="img/donantes/cascabel.png" alt="Cascabel">
+            </div>
+            <div class="donante-logo">
+                <img src="img/donantes/rico.png" alt="Rico">
+            </div>
+            <div class="donante-logo">
+                <img src="img/donantes/alimentos-carnicos.png" alt="Alimentos Cárnicos">
+            </div>
+            <div class="donante-logo">
+                <img src="img/donantes/la-recetta.png" alt="La Recetta">
+            </div>
+            <div class="donante-logo">
+                <img src="img/donantes/meals.png" alt="Meals de Colombia S.A.">
+            </div>
+        </div>
+    </section>
+
+    <section class="contacto-section" id="contacto">
+        <div class="contacto-container">
+            <div class="contacto-info">
+                <h2>Contáctanos</h2>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Ubicación</h3>
+                        <p>Calle 53 C No. 31-121</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Teléfono</h3>
+                        <p>+57 317 0986273</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Correo Electrónico</h3>
+                        <p>comunicaciones.ba@pastoralsocialbaq.org</p>
+                    </div>
+                </div>
+                <div class="redes-sociales">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" title="@banalimentos.baq"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" title="@Banco de Alimentos Barranquilla"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" title="@balimentosbaq"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="contacto-mapa">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.8901247592325!2d-74.79007792412682!3d11.018033042505395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42d6f5c6b4c7d%3A0x3c3c3c3c3c3c3c3c!2sCalle%2053%20C%20No.%2031-121%2C%20Barranquilla%2C%20Atl%C3%A1ntico!5e0!3m2!1ses!2sco!4v1649789456789!5m2!1ses!2sco" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2023 Banco de Alimentos</p>
     </footer>
