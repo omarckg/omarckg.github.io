@@ -232,24 +232,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Funcionalidad del Chat Widget
     const chatButton = document.getElementById('openChat');
     const chatWidget = document.getElementById('chatWidget');
-    const closeChat = document.getElementById('closeChat');
-    const startChat = document.getElementById('startChat');
+    const closeButton = document.getElementById('closeChat');
+    const startChatButton = document.getElementById('startChat');
 
-    chatButton.addEventListener('click', () => {
+    chatButton.addEventListener('click', function() {
         chatWidget.classList.remove('hidden');
-        chatButton.style.display = 'none';
     });
 
-    closeChat.addEventListener('click', () => {
+    closeButton.addEventListener('click', function() {
         chatWidget.classList.add('hidden');
-        setTimeout(() => {
-            chatButton.style.display = 'flex';
-        }, 300);
     });
 
-    startChat.addEventListener('click', () => {
-        // Aquí puedes agregar la lógica para iniciar el chat real
-        window.open('https://wa.me/573170986273', '_blank');
+    startChatButton.addEventListener('click', function() {
+        window.location.href = "https://wa.me/573170986273";
     });
 
     // Carrusel de Donantes
