@@ -201,6 +201,12 @@ button:hover {
 .navbar-logo img {
     height: 70px;
     margin-right: 15px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.navbar-logo img:hover {
+    transform: scale(1.05);
 }
 
 .navbar-logo h1 {
@@ -676,7 +682,7 @@ section h2 {
     background-color: transparent;
     border: 2px solid #398965;
     color: #398965;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border-radius: 25px;
     cursor: pointer;
     font-weight: bold;
@@ -686,6 +692,13 @@ section h2 {
 .donation-type button.active {
     background-color: #398965;
     color: #f1efb5;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(57, 137, 101, 0.2);
+}
+
+.donation-type button:hover:not(.active) {
+    background-color: rgba(57, 137, 101, 0.1);
+    transform: translateY(-2px);
 }
 
 .donation-amounts {
@@ -703,12 +716,41 @@ section h2 {
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.amount-option:hover:not(.active) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(57, 137, 101, 0.1);
 }
 
 .amount-option.active {
     background-color: #ef8639;
     border-color: #ef8639;
     color: white;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(239, 134, 57, 0.2);
+}
+
+.amount-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.amount-option:hover::before {
+    left: 100%;
 }
 
 .amount-input {
@@ -719,6 +761,22 @@ section h2 {
     border-radius: 8px;
     padding: 10px;
     margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.amount-input:focus-within {
+    border-color: #ef8639;
+    box-shadow: 0 0 0 3px rgba(239, 134, 57, 0.2);
+}
+
+.amount-input input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 1.1em;
+    color: #398965;
+    text-align: center;
 }
 
 .donate-button {
@@ -731,6 +789,46 @@ section h2 {
     font-size: 1.2em;
     font-weight: bold;
     margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.donate-button:hover {
+    background-color: #e67728;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(239, 134, 57, 0.3);
+}
+
+.donate-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.donate-button:hover::before {
+    left: 100%;
+}
+
+.donation-info {
+    color: #398965;
+    font-size: 0.9em;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(57, 137, 101, 0.1);
+    transition: all 0.3s ease;
 }
 
 @media (max-width: 1200px) {
@@ -1244,7 +1342,7 @@ section h2 {
     font-size: 1.1em;
     line-height: 1.6;
     margin-bottom: 20px;
-    color: #33333300;
+    color: #333333;
 }
 
 .donaciones-especie-image {
@@ -1322,6 +1420,17 @@ section h2 {
     }
 }
 
+@keyframes dropIn {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 .carousel-btn {
     display: inline-block;
     background-color: #ef8639;
@@ -1334,6 +1443,12 @@ section h2 {
     margin-top: 20px;
     transition: all 0.3s ease;
     border: 2px solid #ef8639;
+    opacity: 0;
+}
+
+.carousel-slide.active .carousel-btn {
+    animation: dropIn 0.8s ease forwards;
+    animation-delay: 0.5s;
 }
 
 .carousel-btn:hover {
@@ -1341,4 +1456,125 @@ section h2 {
     color: #f1efb5;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(239, 134, 57, 0.3);
+}
+
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.chat-header {
+    background-color: #398965;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.close-chat {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+.close-chat:hover {
+    transform: scale(1.1);
+}
+
+.chat-messages {
+    padding: 20px;
+    background-color: #2a2a2a;
+    min-height: 100px;
+}
+
+.message {
+    background-color: #444;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    max-width: 80%;
+    display: inline-block;
+}
+
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #00a650;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 166, 80, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.chat-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 166, 80, 0.4);
+}
+
+.chat-button i {
+    font-size: 24px;
+}
+
+.chat-widget.hidden {
+    transform: translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.chat-action {
+    padding: 15px;
+    background-color: #2a2a2a;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.chat-action button {
+    background-color: #00a650;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chat-action button:hover {
+    background-color: #008f44;
+    transform: translateY(-2px);
+}
+
+.chat-action button i {
+    font-size: 1.2em;
 }

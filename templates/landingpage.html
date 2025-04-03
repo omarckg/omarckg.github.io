@@ -11,7 +11,7 @@
     <header class="navbar-modern">
         <div class="navbar-container">
             <div class="navbar-logo">
-                <img src="img/logo.png" alt="Logo Banco de Alimentos">
+                <img src="img/banco.jpg" alt="Logo Banco de Alimentos">
                 <h1>Banco de Alimentos</h1>
             </div>
             <nav class="navbar-menu">
@@ -214,7 +214,7 @@
                     <p>Evitando el desperdicio de alimentos hoy, podemos erradicar el hambre del mañana.</p>
                 </div>
                 <div class="donaciones-especie-image">
-                    <img src="img/donaciones-especie.jpg" alt="Bolsa con verduras y frutas frescas">
+                    <img src="img/carrito.png" alt="Bolsa con verduras y frutas frescas">
                 </div>
             </div>
         </div>
@@ -270,6 +270,31 @@
     <footer>
         <p>&copy; 2023 Banco de Alimentos</p>
     </footer>
+
+    <!-- Widget de Chat -->
+    <button class="chat-button" id="openChat">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <div class="chat-widget hidden" id="chatWidget">
+        <div class="chat-header">
+            <h3>Banco de Alimentos</h3>
+            <button class="close-chat" id="closeChat">×</button>
+        </div>
+        <div class="chat-messages">
+            <div class="message">
+                Hola 👋<br>
+                ¿En qué podemos ayudarte?
+            </div>
+        </div>
+        <div class="chat-action">
+            <button id="startChat">
+                Chatear
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
