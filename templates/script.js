@@ -251,4 +251,50 @@ document.addEventListener('DOMContentLoaded', function() {
         // Aquí puedes agregar la lógica para iniciar el chat real
         window.open('https://wa.me/573170986273', '_blank');
     });
+
+    // Carrusel de Donantes
+    const donantesSlider = document.querySelector('.donantes-slider');
+    const donantePrevBtn = document.querySelector('.donantes-control.prev');
+    const donanteNextBtn = document.querySelector('.donantes-control.next');
+    const logoWidth = 240; // 200px del logo + 40px del gap
+    let donantePosition = 0;
+    const totalLogos = document.querySelectorAll('.donante-logo').length;
+    const logosToShow = Math.floor(donantesSlider.clientWidth / logoWidth);
+    let maxDonantePosition = -(totalLogos - logosToShow) * logoWidth;
+
+    function updateSliderPosition() {
+        donantesSlider.style.transform = `translateX(${donantePosition}px)`;
+        
+        // Actualizar estado de los botones
+        donantePrevBtn.style.opacity = donantePosition === 0 ? '0.5' : '1';
+        donanteNextBtn.style.opacity = donantePosition <= maxDonantePosition ? '0.5' : '1';
+    }
+
+    donantePrevBtn.addEventListener('click', () => {
+        if (donantePosition === 0) return;
+        donantePosition = Math.min(donantePosition + logoWidth, 0);
+        updateSliderPosition();
+    });
+
+    donanteNextBtn.addEventListener('click', () => {
+        if (donantePosition <= maxDonantePosition) return;
+        donantePosition = Math.max(donantePosition - logoWidth, maxDonantePosition);
+        updateSliderPosition();
+    });
+
+    // Actualizar maxPosition cuando cambia el tamaño de la ventana
+    window.addEventListener('resize', () => {
+        const newLogosToShow = Math.floor(donantesSlider.clientWidth / logoWidth);
+        const newMaxPosition = -(totalLogos - newLogosToShow) * logoWidth;
+        maxDonantePosition = newMaxPosition;
+        
+        // Asegurarse de que la posición actual sea válida
+        if (donantePosition < maxDonantePosition) {
+            donantePosition = maxDonantePosition;
+            updateSliderPosition();
+        }
+    });
+
+    // Inicializar estado de los botones
+    updateSliderPosition();
 }); 
