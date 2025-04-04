@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dona - Banco de Alimentos</title>
+    <link rel="stylesheet" href="../css/diseño.css">
+    <link rel="stylesheet" href="../css/donacion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar-modern">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <img src="../img/banco.jpg" alt="Logo Banco de Alimentos">
+                <h1>Banco de Alimentos</h1>
+            </div>
+            <nav class="navbar-menu">
+                <a href="landingpage.html">⌂ Inicio</a>
+                <a href="nosotros.html">⚡ Nosotros</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-trigger">✧ Ayúdanos a ayudar <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#exterior">✦ Desde el Exterior</a>
+                        <a href="donacion.html">⋆ En Efectivo</a>
+                        <a href="#especie">✧ En Especie</a>
+                    </div>
+                </div>
+                <a href="#blog">✦ Blog</a>
+                <a href="#regala">⚡ Regala Generosidad</a>
+                <a href="#contacto">✧ Contáctenos</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="donacion-hero">
+        <h1 class="titulo-animado">DONA EN EFECTIVO</h1>
+        <p class="hero-quote slide-up">"Porque tuve hambre y me diste de comer"</p>
+    </section>
+
+    <!-- Donation Options -->
+    <section class="donacion-options">
+        <div class="donacion-grid">
+            <!-- Opción 50.000 -->
+            <div class="donacion-card">
+                <img src="../img/b1.jpg" alt="Niño beneficiario">
+                <div class="donacion-info">
+                    <h2>$50.000</h2>
+                    <p>Entregas 14 platos de comida</p>
+                    <button class="dona-btn naranja">DONA AQUÍ</button>
+                </div>
+            </div>
+
+            <!-- Opción 100.000 -->
+            <div class="donacion-card">
+                <img src="../img/b2.jpg" alt="Adulto mayor beneficiario">
+                <div class="donacion-info">
+                    <h2>$100.000</h2>
+                    <p>Entregas 30 platos de comida</p>
+                    <button class="dona-btn azul">DONA AQUÍ</button>
+                </div>
+            </div>
+
+            <!-- Opción 300.000 -->
+            <div class="donacion-card">
+                <img src="../img/b3.jpg" alt="Grupo de beneficiarios">
+                <div class="donacion-info">
+                    <h2>$300.000</h2>
+                    <p>Entregas 90 platos de comida</p>
+                    <button class="dona-btn salmon">DONA AQUÍ</button>
+                </div>
+            </div>
+
+            <!-- Opción Otro valor -->
+            <div class="donacion-card">
+                <img src="../img/b4.jpg" alt="Niños felices">
+                <div class="donacion-info">
+                    <h2>Otro valor</h2>
+                    <p>Entregas los platos que desees</p>
+                    <button class="dona-btn verde">DONA AQUÍ</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer y Chat Widget igual que en las otras páginas -->
+    <footer>
+        <p>© Copyright 2022. Todos los derechos reservados. | Desarrollado por: Banco de alimentos Arquidiocesis de Barranquilla</p>
+    </footer>
+
+    <button class="chat-button" id="openChat">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <div class="chat-widget hidden" id="chatWidget">
+        <div class="chat-header">
+            <h3>Banco de Alimentos</h3>
+            <button class="close-chat" id="closeChat">×</button>
+        </div>
+        <div class="chat-messages">
+            <div class="message">
+                Hola 👋<br>
+                ¿En qué podemos ayudarte?
+            </div>
+        </div>
+        <div class="chat-action">
+            <button id="startChat">
+                Chatear
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/chat.js"></script>
+</body>
+</html>
