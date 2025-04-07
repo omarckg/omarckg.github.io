@@ -1,112 +1,137 @@
 .donacion-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(8, 88, 52, 0.564)), url('../img/camion.jpeg');
+    height: 80vh;
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/hero-donacion.jpg');
     background-size: cover;
     background-position: center;
-    height: 400px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    color: white;
+    justify-content: center;
     text-align: center;
-    padding: 20px;
+    color: white;
+    margin-bottom: 4rem;
     overflow: hidden;
 }
 
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    padding: 0 2rem;
+}
+
+.hero-widgets {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.widget-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    min-width: 200px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.widget-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.widget-card i {
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+
+.widget-card h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.widget-card p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
 .donacion-hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
+    font-size: 4rem;
+    margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     letter-spacing: 2px;
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleGlow 2s infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+    }
 }
 
 .hero-quote {
     font-size: 1.5rem;
     font-style: italic;
+    margin-bottom: 2rem;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-.donacion-options {
-    padding: 60px 20px;
-    background-color: #f8f8f8;
+.hero-cta {
+    margin-top: 2rem;
 }
 
-.donacion-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    padding: 20px;
-}
-
-.donacion-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.donacion-card:hover {
-    transform: translateY(-5px);
-}
-
-.donacion-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.donacion-info {
-    padding: 20px;
-    text-align: center;
-}
-
-.donacion-info h2 {
-    font-size: 2rem;
-    color: #f1efb5;
-    margin-bottom: 10px;
-}
-
-.donacion-info p {
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.dona-btn {
-    padding: 12px 30px;
-    border: none;
-    border-radius: 25px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
+.hero-donate-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
     color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
 }
 
-.dona-btn.naranja {
-    background-color: #ef8639;
-}
-
-.dona-btn.azul {
-    background-color: #4a90e2;
-}
-
-.dona-btn.salmon {
-    background-color: #ff7f7f;
-}
-
-.dona-btn.verde {
-    background-color: #398965;
-}
-
-.dona-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+.hero-donate-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
 }
 
 @media (max-width: 768px) {
+    .hero-widgets {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .widget-card {
+        width: 100%;
+        max-width: 300px;
+    }
+    
     .donacion-hero h1 {
         font-size: 2.5rem;
     }
@@ -114,48 +139,273 @@
     .hero-quote {
         font-size: 1.2rem;
     }
-    
+}
+
+.donacion-options {
+    padding: 4rem 2rem;
+    background: white;
+}
+
+.donacion-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.donacion-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.donacion-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.card-image-container {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.donacion-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+}
+
+.donacion-info {
+    padding: 2rem;
+    text-align: center;
+}
+
+.donacion-info h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.donacion-info p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.dona-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.dona-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.impacto-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.impacto-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/pattern.png') repeat;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.impacto-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.impacto-section h2 {
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.impacto-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    border-radius: 2px;
+}
+
+.impacto-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.impacto-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.impacto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.impacto-card i {
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+
+.impacto-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.impacto-card p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.testimonios-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonios-section h2 {
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.testimonios-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    border-radius: 2px;
+}
+
+.testimonios-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.testimonio-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.testimonio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.testimonio-content {
+    position: relative;
+}
+
+.testimonio-content p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.testimonio-content::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    font-size: 4rem;
+    color: #4CAF50;
+    opacity: 0.2;
+}
+
+.testimonio-autor {
+    display: block;
+    font-weight: bold;
+    color: #4CAF50;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .hero-widgets {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .impacto-grid {
+        grid-template-columns: 1fr;
+    }
+
     .donacion-grid {
         grid-template-columns: 1fr;
     }
-}
 
-/* Animaciones mejoradas */
-.titulo-animado {
-    opacity: 0;
-    transform: scale(0.5);
-    animation: zoomInFade 1s ease forwards;
-}
-
-.slide-up {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: slideUpFade 1s ease forwards;
-    animation-delay: 0.5s;
-}
-
-@keyframes zoomInFade {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    50% {
-        opacity: 0.5;
-        transform: scale(1.1);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes slideUpFade {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+    .testimonios-container {
+        grid-template-columns: 1fr;
     }
 }

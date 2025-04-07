@@ -7,45 +7,48 @@
     <link rel="stylesheet" href="../css/diseño.css">
     <link rel="stylesheet" href="../css/especie.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
     <!-- Navbar -->
     <header class="navbar-modern">
         <div class="navbar-container">
             <div class="navbar-logo">
-                <img src="../img/banco.jpg" alt="Logo Banco de Alimentos">
-                <h1>Banco de Alimentos</h1>
+                <img src="../img/banco.jpg" alt="Logo Banco de Alimentos" class="logo-pulse">
+                <h1 class="text-gradient">Banco de Alimentos</h1>
             </div>
             <nav class="navbar-menu">
-                <a href="landingpage.html">⌂ Inicio</a>
-                <a href="nosotros.html">⚡ Nosotros</a>
+                <a href="landingpage.html" class="nav-link">Inicio</a>
+                <a href="nosotros.html" class="nav-link">Nosotros</a>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-trigger">✧ Ayúdanos a ayudar <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="#exterior">✦ Desde el Exterior</a>
-                        <a href="donacion.html">⋆ En Efectivo</a>
-                        <a href="especie.html">✧ En Especie</a>
+                    <a href="#" class="dropdown-trigger nav-link">Ayúdanos a ayudar <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">                       
+                        <a href="donacion.html">En Dinero</a>
+                        <a href="especie.html">En Especie</a>
                     </div>
                 </div>
-                <a href="donacion.html">⚡ Regala Generosidad</a>
-                <a href="#contacto">✧ Contáctenos</a>
+                <a href="regala_generosidad.html" class="nav-link">Regala Generosidad</a>
+                <a href="#contacto" class="nav-link">Contáctenos</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="especie-hero">
-        <h1 class="titulo-animado">DONA EN ESPECIE</h1>
-        <p class="hero-quote slide-up">Juntos podemos reducir el desperdicio de alimentos</p>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="animate__animated animate__fadeInDown">DONA EN ESPECIE</h1>
+            <p class="hero-quote animate__animated animate__fadeInUp">Juntos podemos reducir el desperdicio de alimentos</p>
+        </div>
     </section>
 
     <!-- Productos que recibimos -->
     <section class="productos-section">
-        <h2 class="section-title">Productos que recibimos</h2>
+        <h2 class="section-title animate__animated animate__fadeIn">Productos que recibimos</h2>
         <div class="productos-grid">
             <!-- Tarjeta 1 -->
-            <div class="producto-card">
-                <div class="icon-container">
+            <div class="producto-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+                <div class="icon-container pulse">
                     <i class="fas fa-fish"></i>
                 </div>
                 <h3>Evidencian fallas en su presentación</h3>
@@ -53,8 +56,8 @@
             </div>
 
             <!-- Tarjeta 2 -->
-            <div class="producto-card">
-                <div class="icon-container">
+            <div class="producto-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+                <div class="icon-container pulse">
                     <i class="fas fa-apple-alt"></i>
                 </div>
                 <h3>Su fecha de caducidad es cercana</h3>
@@ -62,8 +65,8 @@
             </div>
 
             <!-- Tarjeta 3 -->
-            <div class="producto-card">
-                <div class="icon-container">
+            <div class="producto-card animate__animated animate__fadeInUp" style="animation-delay: 0.6s">
+                <div class="icon-container pulse">
                     <i class="fas fa-sync-alt"></i>
                 </div>
                 <h3>Presentan baja rotación</h3>
@@ -71,8 +74,8 @@
             </div>
 
             <!-- Tarjeta 4 -->
-            <div class="producto-card">
-                <div class="icon-container">
+            <div class="producto-card animate__animated animate__fadeInUp" style="animation-delay: 0.8s">
+                <div class="icon-container pulse">
                     <i class="fas fa-cookie-bite"></i>
                 </div>
                 <h3>El estado de maduración exige pronto consumo</h3>
@@ -80,8 +83,8 @@
             </div>
 
             <!-- Tarjeta 5 -->
-            <div class="producto-card">
-                <div class="icon-container">
+            <div class="producto-card animate__animated animate__fadeInUp" style="animation-delay: 1.0s">
+                <div class="icon-container pulse">
                     <i class="fas fa-leaf"></i>
                 </div>
                 <h3>Generar impacto social y ambiental</h3>
@@ -89,8 +92,8 @@
             </div>
 
             <!-- Tarjeta 6 -->
-            <div class="producto-card">
-                <div class="icon-container">
+            <div class="producto-card animate__animated animate__fadeInUp" style="animation-delay: 1.2s">
+                <div class="icon-container pulse">
                     <i class="fas fa-trash-restore-alt"></i>
                 </div>
                 <h3>Evitar la destrucción de producto</h3>
@@ -101,10 +104,10 @@
 
     <!-- Sección de Contacto para Donaciones -->
     <section class="contacto-donacion">
-        <div class="contacto-content">
+        <div class="contacto-content animate__animated animate__fadeIn">
             <h2>¿Quieres hacer una donación en especie?</h2>
             <p>Contáctanos y te ayudaremos con el proceso</p>
-            <a href="https://wa.me/573170986273" class="contacto-btn">
+            <a href="https://wa.me/573170986273" class="contacto-btn pulse">
                 <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
             </a>
         </div>
@@ -138,9 +141,9 @@
                 <div class="redes-sociales">
                     <h3>Síguenos</h3>
                     <div class="social-icons">
-                        <a href="#" class="social-icon" title="@banalimentos.baq"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon" title="@Banco de Alimentos Barranquilla"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon" title="@balimentosbaq"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/banalimentos.baq/" class="social-icon" title="@banalimentos.baq" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100093143110858" class="social-icon" title="@Banco de Alimentos Barranquilla" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/Balimentosbaq" class="social-icon" title="@balimentosbaq" target="_blank"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>

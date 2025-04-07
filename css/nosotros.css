@@ -1,16 +1,16 @@
-/* Hero section */
+/* Hero Section */
 .hero-nosotros {
+    height: 80vh;
     position: relative;
-    height: 500px;
-    width: 100%;
-    background-image: url('../img/bq.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/hero-nosotros.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 91px; /* Altura del navbar */
+    text-align: center;
+    color: white;
+    margin-bottom: 4rem;
     overflow: hidden;
 }
 
@@ -20,80 +20,90 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(57, 137, 101, 0.7);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    text-align: center;
+    max-width: 1200px;
+    padding: 0 2rem;
 }
 
-.animate-title {
-    color: #f1efb5;
-    font-size: 4em;
-    font-weight: bold;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s ease forwards;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+.hero-nosotros h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleGlow 2s infinite alternate;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
+@keyframes titleGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Efecto parallax al hacer scroll */
-.hero-nosotros:hover {
-    background-position: center calc(50% + 10px);
-    transition: background-position 0.3s ease-out;
-}
-
-/* Media queries para responsividad */
-@media (max-width: 768px) {
-    .animate-title {
-        font-size: 2.5em;
-    }
-    
-    .hero-nosotros {
-        height: 400px;
+    100% {
+        text-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
     }
 }
 
-/* Sección Misión */
+.hero-nosotros p {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Misión Section */
 .mision-section {
-    padding: 80px 20px;
-    background-color: #fff;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.mision-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/pattern.png') repeat;
+    opacity: 0.1;
+    z-index: 0;
 }
 
 .mision-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    position: relative;
+    z-index: 1;
 }
 
 .mision-imagen {
-    flex: 1;
     position: relative;
+    border-radius: 20px;
     overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(57, 137, 101, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.mision-imagen:hover {
+    transform: translateY(-10px);
 }
 
 .mision-imagen img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.5s ease;
 }
 
@@ -102,402 +112,224 @@
 }
 
 .mision-contenido {
-    flex: 1;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.mision-contenido h2 {
-    color: #f1efb5;
-    font-size: 2.5em;
-    margin-bottom: 30px;
+.section-title {
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 2rem;
     position: relative;
-    background-color: #398965;
-    padding: 10px 30px;
-    display: inline-block;
-    border-radius: 8px;
+    padding-bottom: 1rem;
 }
 
-.mision-contenido h2::after {
+.section-title::after {
     content: '';
     position: absolute;
+    bottom: 0;
     left: 0;
-    bottom: -5px;
-    width: 100%;
-    height: 3px;
-    background-color: #ef8639;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    border-radius: 2px;
 }
-
-.mision-contenido p {
-    color: #333;
-    font-size: 1.1em;
-    line-height: 1.8;
-    text-align: justify;
-}
-
-.mision-texto span {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInWord 0.5s ease forwards;
-}
-
-@keyframes fadeInWord {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Generar delays para todas las palabras (ajustamos para 60 palabras que es más que suficiente) */
-.mision-texto span:nth-child(1) { animation-delay: 0.05s; }
-.mision-texto span:nth-child(2) { animation-delay: 0.10s; }
-.mision-texto span:nth-child(3) { animation-delay: 0.15s; }
-.mision-texto span:nth-child(4) { animation-delay: 0.20s; }
-.mision-texto span:nth-child(5) { animation-delay: 0.25s; }
-.mision-texto span:nth-child(6) { animation-delay: 0.30s; }
-.mision-texto span:nth-child(7) { animation-delay: 0.35s; }
-.mision-texto span:nth-child(8) { animation-delay: 0.40s; }
-.mision-texto span:nth-child(9) { animation-delay: 0.45s; }
-.mision-texto span:nth-child(10) { animation-delay: 0.50s; }
-.mision-texto span:nth-child(11) { animation-delay: 0.55s; }
-.mision-texto span:nth-child(12) { animation-delay: 0.60s; }
-.mision-texto span:nth-child(13) { animation-delay: 0.65s; }
-.mision-texto span:nth-child(14) { animation-delay: 0.70s; }
-.mision-texto span:nth-child(15) { animation-delay: 0.75s; }
-.mision-texto span:nth-child(16) { animation-delay: 0.80s; }
-.mision-texto span:nth-child(17) { animation-delay: 0.85s; }
-.mision-texto span:nth-child(18) { animation-delay: 0.90s; }
-.mision-texto span:nth-child(19) { animation-delay: 0.95s; }
-.mision-texto span:nth-child(20) { animation-delay: 1.00s; }
-.mision-texto span:nth-child(21) { animation-delay: 1.05s; }
-.mision-texto span:nth-child(22) { animation-delay: 1.10s; }
-.mision-texto span:nth-child(23) { animation-delay: 1.15s; }
-.mision-texto span:nth-child(24) { animation-delay: 1.20s; }
-.mision-texto span:nth-child(25) { animation-delay: 1.25s; }
-.mision-texto span:nth-child(26) { animation-delay: 1.30s; }
-.mision-texto span:nth-child(27) { animation-delay: 1.35s; }
-.mision-texto span:nth-child(28) { animation-delay: 1.40s; }
-.mision-texto span:nth-child(29) { animation-delay: 1.45s; }
-.mision-texto span:nth-child(30) { animation-delay: 1.50s; }
-.mision-texto span:nth-child(31) { animation-delay: 1.55s; }
-.mision-texto span:nth-child(32) { animation-delay: 1.60s; }
-.mision-texto span:nth-child(33) { animation-delay: 1.65s; }
-.mision-texto span:nth-child(34) { animation-delay: 1.70s; }
-.mision-texto span:nth-child(35) { animation-delay: 1.75s; }
-.mision-texto span:nth-child(36) { animation-delay: 1.80s; }
-.mision-texto span:nth-child(37) { animation-delay: 1.85s; }
-.mision-texto span:nth-child(38) { animation-delay: 1.90s; }
-.mision-texto span:nth-child(39) { animation-delay: 1.95s; }
-.mision-texto span:nth-child(40) { animation-delay: 2.00s; }
-.mision-texto span:nth-child(41) { animation-delay: 2.05s; }
-.mision-texto span:nth-child(42) { animation-delay: 2.10s; }
-.mision-texto span:nth-child(43) { animation-delay: 2.15s; }
-.mision-texto span:nth-child(44) { animation-delay: 2.20s; }
-.mision-texto span:nth-child(45) { animation-delay: 2.25s; }
-.mision-texto span:nth-child(46) { animation-delay: 2.30s; }
-.mision-texto span:nth-child(47) { animation-delay: 2.35s; }
-.mision-texto span:nth-child(48) { animation-delay: 2.40s; }
-.mision-texto span:nth-child(49) { animation-delay: 2.45s; }
-.mision-texto span:nth-child(50) { animation-delay: 2.50s; }
-.mision-texto span:nth-child(51) { animation-delay: 2.55s; }
-.mision-texto span:nth-child(52) { animation-delay: 2.60s; }
-.mision-texto span:nth-child(53) { animation-delay: 2.65s; }
-.mision-texto span:nth-child(54) { animation-delay: 2.70s; }
-.mision-texto span:nth-child(55) { animation-delay: 2.75s; }
-.mision-texto span:nth-child(56) { animation-delay: 2.80s; }
-.mision-texto span:nth-child(57) { animation-delay: 2.85s; }
-.mision-texto span:nth-child(58) { animation-delay: 2.90s; }
-.mision-texto span:nth-child(59) { animation-delay: 2.95s; }
-.mision-texto span:nth-child(60) { animation-delay: 3.00s; }
 
 .mision-texto {
-    margin: 0;
-    line-height: 2;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
-/* Asegurarse de que las palabras mantengan espacios entre ellas */
-.mision-texto span {
-    margin-right: 0.3em;
+.mision-texto:hover {
+    transform: translateY(-5px);
 }
 
-/* Ajuste para dispositivos móviles */
-@media (max-width: 768px) {
-    .mision-texto {
-        line-height: 1.8;
-    }
-    
-    .mision-texto span {
-        margin-right: 0.2em;
-    }
+.mision-texto p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .mision-container {
-        flex-direction: column;
-    }
-
-    .mision-imagen {
-        width: 100%;
-    }
-
-    .mision-contenido {
-        text-align: center;
-    }
-
-    .mision-contenido h2::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-/* Sección ¿Qué es un banco de alimentos? */
+/* Qué es Section */
 .que-es-section {
-    padding: 80px 20px;
-    background-color: #fff;
+    padding: 4rem 2rem;
+    background: white;
+    position: relative;
 }
 
 .que-es-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
     align-items: center;
-    gap: 80px;
 }
 
 .que-es-contenido {
-    flex: 1;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .titulo-verde {
-    color: #f1efb5;
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    line-height: 1.2;
-    background-color: #398965;
-    padding: 15px 30px;
-    border-radius: 10px;
-    display: inline-block;
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.titulo-verde::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    border-radius: 2px;
 }
 
 .que-es-texto {
-    color: #333;
-    font-size: 1.1em;
-    line-height: 1.8;
-    text-align: justify;
-    margin-bottom: 30px;
-}
-
-.que-es-mapa {
-    flex: 1;
-    position: relative;
-    text-align: center;
-}
-
-.que-es-mapa img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
 
-.que-es-mapa:hover img {
-    transform: scale(1.02);
+.que-es-texto:hover {
+    transform: translateY(-5px);
 }
 
-.mapa-texto {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.mapa-texto h3 {
-    color: #ef8639;
-    font-size: 2em;
-    margin: 0;
-    font-weight: bold;
-}
-
-.mapa-texto p {
-    font-size: 1.2em;
-    margin: 5px 0;
-    color: #666;
+.que-es-texto p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1.5rem;
 }
 
 .link-destacado {
-    color: #398965;
-    text-decoration: none;
+    color: #4CAF50;
     font-weight: bold;
-    transition: color 0.3s ease;
+    text-decoration: none;
+    position: relative;
 }
 
-.link-destacado:hover {
-    color: #ef8639;
+.link-destacado::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #4CAF50;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.link-destacado:hover::after {
+    transform: scaleX(1);
 }
 
 .btn-donar {
     display: inline-block;
-    background-color: #ef8639;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
     color: white;
-    padding: 15px 40px;
-    border-radius: 5px;
     text-decoration: none;
+    border-radius: 30px;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.2rem;
+    margin-top: 2rem;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
 }
 
 .btn-donar:hover {
-    background-color: #d67731;
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(239, 134, 57, 0.3);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
 }
 
-/* Responsive */
-@media (max-width: 992px) {
+.que-es-mapa {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    aspect-ratio: 1/1;
+    height: 400px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.que-es-mapa:hover {
+    transform: translateY(-10px);
+}
+
+.que-es-mapa img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #f8f9fa;
+}
+
+.mapa-texto {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    text-align: center;
+    z-index: 2;
+}
+
+.mapa-texto h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.mapa-texto p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mision-container,
     .que-es-container {
-        flex-direction: column;
-        gap: 40px;
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
-    .que-es-contenido {
-        order: 1;
+    .hero-nosotros h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-nosotros p {
+        font-size: 1.2rem;
+    }
+
+    .section-title,
+    .titulo-verde {
+        font-size: 2rem;
+    }
+
+    .mision-texto p,
+    .que-es-texto p {
+        font-size: 1.1rem;
     }
 
     .que-es-mapa {
-        order: 2;
-    }
-
-    .titulo-verde {
-        text-align: center;
-        display: block;
-    }
-}
-
-/* Estilos para el texto animado */
-.que-es-texto span {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInWord 0.5s ease forwards;
-    margin-right: 0.3em;
-}
-
-@keyframes fadeInWord {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Delays para cada palabra */
-.que-es-texto span:nth-child(1) { animation-delay: 0.05s; }
-.que-es-texto span:nth-child(2) { animation-delay: 0.10s; }
-.que-es-texto span:nth-child(3) { animation-delay: 0.15s; }
-.que-es-texto span:nth-child(4) { animation-delay: 0.20s; }
-.que-es-texto span:nth-child(5) { animation-delay: 0.25s; }
-.que-es-texto span:nth-child(6) { animation-delay: 0.30s; }
-.que-es-texto span:nth-child(7) { animation-delay: 0.35s; }
-.que-es-texto span:nth-child(8) { animation-delay: 0.40s; }
-.que-es-texto span:nth-child(9) { animation-delay: 0.45s; }
-.que-es-texto span:nth-child(10) { animation-delay: 0.50s; }
-.que-es-texto span:nth-child(11) { animation-delay: 0.55s; }
-.que-es-texto span:nth-child(12) { animation-delay: 0.60s; }
-.que-es-texto span:nth-child(13) { animation-delay: 0.65s; }
-.que-es-texto span:nth-child(14) { animation-delay: 0.70s; }
-.que-es-texto span:nth-child(15) { animation-delay: 0.75s; }
-.que-es-texto span:nth-child(16) { animation-delay: 0.80s; }
-.que-es-texto span:nth-child(17) { animation-delay: 0.85s; }
-.que-es-texto span:nth-child(18) { animation-delay: 0.90s; }
-.que-es-texto span:nth-child(19) { animation-delay: 0.95s; }
-.que-es-texto span:nth-child(20) { animation-delay: 1.00s; }
-.que-es-texto span:nth-child(21) { animation-delay: 1.05s; }
-.que-es-texto span:nth-child(22) { animation-delay: 1.10s; }
-.que-es-texto span:nth-child(23) { animation-delay: 1.15s; }
-.que-es-texto span:nth-child(24) { animation-delay: 1.20s; }
-.que-es-texto span:nth-child(25) { animation-delay: 1.25s; }
-.que-es-texto span:nth-child(26) { animation-delay: 1.30s; }
-.que-es-texto span:nth-child(27) { animation-delay: 1.35s; }
-.que-es-texto span:nth-child(28) { animation-delay: 1.40s; }
-.que-es-texto span:nth-child(29) { animation-delay: 1.45s; }
-.que-es-texto span:nth-child(30) { animation-delay: 1.50s; }
-.que-es-texto span:nth-child(31) { animation-delay: 1.55s; }
-.que-es-texto span:nth-child(32) { animation-delay: 1.60s; }
-.que-es-texto span:nth-child(33) { animation-delay: 1.65s; }
-.que-es-texto span:nth-child(34) { animation-delay: 1.70s; }
-.que-es-texto span:nth-child(35) { animation-delay: 1.75s; }
-.que-es-texto span:nth-child(36) { animation-delay: 1.80s; }
-.que-es-texto span:nth-child(37) { animation-delay: 1.85s; }
-.que-es-texto span:nth-child(38) { animation-delay: 1.90s; }
-.que-es-texto span:nth-child(39) { animation-delay: 1.95s; }
-.que-es-texto span:nth-child(40) { animation-delay: 2.00s; }
-.que-es-texto span:nth-child(41) { animation-delay: 2.05s; }
-.que-es-texto span:nth-child(42) { animation-delay: 2.10s; }
-.que-es-texto span:nth-child(43) { animation-delay: 2.15s; }
-.que-es-texto span:nth-child(44) { animation-delay: 2.20s; }
-.que-es-texto span:nth-child(45) { animation-delay: 2.25s; }
-.que-es-texto span:nth-child(46) { animation-delay: 2.30s; }
-.que-es-texto span:nth-child(47) { animation-delay: 2.35s; }
-.que-es-texto span:nth-child(48) { animation-delay: 2.40s; }
-.que-es-texto span:nth-child(49) { animation-delay: 2.45s; }
-.que-es-texto span:nth-child(50) { animation-delay: 2.50s; }
-.que-es-texto span:nth-child(51) { animation-delay: 2.55s; }
-.que-es-texto span:nth-child(52) { animation-delay: 2.60s; }
-.que-es-texto span:nth-child(53) { animation-delay: 2.65s; }
-.que-es-texto span:nth-child(54) { animation-delay: 2.70s; }
-.que-es-texto span:nth-child(55) { animation-delay: 2.75s; }
-.que-es-texto span:nth-child(56) { animation-delay: 2.80s; }
-.que-es-texto span:nth-child(57) { animation-delay: 2.85s; }
-.que-es-texto span:nth-child(58) { animation-delay: 2.90s; }
-.que-es-texto span:nth-child(59) { animation-delay: 2.95s; }
-.que-es-texto span:nth-child(60) { animation-delay: 3.00s; }
-.que-es-texto span:nth-child(61) { animation-delay: 3.05s; }
-.que-es-texto span:nth-child(62) { animation-delay: 3.10s; }
-.que-es-texto span:nth-child(63) { animation-delay: 3.15s; }
-.que-es-texto span:nth-child(64) { animation-delay: 3.20s; }
-.que-es-texto span:nth-child(65) { animation-delay: 3.25s; }
-.que-es-texto span:nth-child(66) { animation-delay: 3.30s; }
-.que-es-texto span:nth-child(67) { animation-delay: 3.35s; }
-.que-es-texto span:nth-child(68) { animation-delay: 3.40s; }
-.que-es-texto span:nth-child(69) { animation-delay: 3.45s; }
-.que-es-texto span:nth-child(70) { animation-delay: 3.50s; }
-.que-es-texto span:nth-child(71) { animation-delay: 3.55s; }
-.que-es-texto span:nth-child(72) { animation-delay: 3.60s; }
-.que-es-texto span:nth-child(73) { animation-delay: 3.65s; }
-.que-es-texto span:nth-child(74) { animation-delay: 3.70s; }
-.que-es-texto span:nth-child(75) { animation-delay: 3.75s; }
-.que-es-texto span:nth-child(76) { animation-delay: 3.80s; }
-.que-es-texto span:nth-child(77) { animation-delay: 3.85s; }
-.que-es-texto span:nth-child(78) { animation-delay: 3.90s; }
-.que-es-texto span:nth-child(79) { animation-delay: 3.95s; }
-.que-es-texto span:nth-child(80) { animation-delay: 4.00s; }
-.que-es-texto span:nth-child(81) { animation-delay: 4.05s; }
-.que-es-texto span:nth-child(82) { animation-delay: 4.10s; }
-.que-es-texto span:nth-child(83) { animation-delay: 4.15s; }
-.que-es-texto span:nth-child(84) { animation-delay: 4.20s; }
-.que-es-texto span:nth-child(85) { animation-delay: 4.25s; }
-.que-es-texto span:nth-child(86) { animation-delay: 4.30s; }
-.que-es-texto span:nth-child(87) { animation-delay: 4.35s; }
-.que-es-texto span:nth-child(88) { animation-delay: 4.40s; }
-.que-es-texto span:nth-child(89) { animation-delay: 4.45s; }
-.que-es-texto span:nth-child(90) { animation-delay: 4.50s; }
-
-/* Ajuste responsive */
-@media (max-width: 768px) {
-    .que-es-texto {
-        line-height: 1.8;
-    }
-    
-    .que-es-texto span {
-        margin-right: 0.2em;
+        height: 300px;
+        max-width: 300px;
     }
 }
 

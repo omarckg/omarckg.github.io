@@ -1,171 +1,240 @@
 .especie-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(8, 88, 52, 0.564)), url('../img/Catedral Reina María_1.jpg');
+    height: 80vh;
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/hero-especie.jpg');
     background-size: cover;
     background-position: center;
-    height: 400px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     color: white;
-    text-align: center;
-    padding: 20px;
+    margin-bottom: 4rem;
+    overflow: hidden;
 }
 
-.titulo-animado {
-    opacity: 0;
-    transform: scale(0.5);
-    animation: zoomInFade 1s ease forwards;
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: 1;
 }
 
-.slide-up {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: slideUpFade 1s ease forwards;
-    animation-delay: 0.5s;
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    padding: 0 2rem;
 }
 
-.section-title {
-    text-align: center;
-    color: #fffd9b;
-    font-size: 2.5rem;
-    margin: 50px 0;
+.especie-hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleGlow 2s infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+    }
+}
+
+.hero-quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 .productos-section {
-    padding: 60px 20px;
-    background-color: #f8f8f8;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.productos-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/pattern.png') repeat;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    border-radius: 2px;
 }
 
 .productos-grid {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .producto-card {
     background: white;
-    padding: 30px;
-    border-radius: 10px;
+    padding: 2rem;
+    border-radius: 20px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .producto-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .icon-container {
     width: 80px;
     height: 80px;
-    margin: 0 auto 20px;
-    background-color: #398965;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.producto-card:hover .icon-container {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .icon-container i {
-    font-size: 35px;
+    font-size: 2rem;
     color: white;
 }
 
 .producto-card h3 {
-    color: #ef8639;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
 }
 
 .producto-card p {
+    font-size: 1.1rem;
     color: #666;
     line-height: 1.6;
 }
 
 .contacto-donacion {
-    background-color: #398965;
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    position: relative;
+    overflow: hidden;
 }
 
 .contacto-content {
     max-width: 800px;
     margin: 0 auto;
+    text-align: center;
+    padding: 3rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.contacto-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
 .contacto-content h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
 }
 
 .contacto-content p {
     font-size: 1.2rem;
-    margin-bottom: 30px;
+    color: #666;
+    margin-bottom: 2rem;
 }
 
 .contacto-btn {
     display: inline-flex;
     align-items: center;
-    padding: 15px 30px;
-    background-color: #25D366;
+    gap: 10px;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
     color: white;
     text-decoration: none;
     border-radius: 30px;
     font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.contacto-btn i {
-    margin-right: 10px;
     font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
 }
 
 .contacto-btn:hover {
-    background-color: #128C7E;
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
 }
 
-@keyframes zoomInFade {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    50% {
-        opacity: 0.5;
-        transform: scale(1.1);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes slideUpFade {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.contacto-btn i {
+    font-size: 1.5rem;
 }
 
 @media (max-width: 768px) {
+    .especie-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-quote {
+        font-size: 1.2rem;
+    }
+    
     .productos-grid {
         grid-template-columns: 1fr;
     }
     
-    .section-title {
-        font-size: 2rem;
+    .contacto-content {
+        padding: 2rem;
     }
     
     .contacto-content h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
+    }
+    
+    .contacto-content p {
+        font-size: 1.1rem;
     }
 }

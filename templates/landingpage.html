@@ -6,27 +6,27 @@
     <title>Banco de Alimentos</title>
     <link rel="stylesheet" href="../css/diseño.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
     <header class="navbar-modern">
         <div class="navbar-container">
             <div class="navbar-logo">
-                <img src="../img/banco.jpg" alt="Logo Banco de Alimentos">
-                <h1>Banco de Alimentos</h1>
+                <img src="../img/banco.jpg" alt="Logo Banco de Alimentos" class="logo-pulse">
+                <h1 class="text-gradient">Banco de Alimentos</h1>
             </div>
             <nav class="navbar-menu">
-                <a href="#inicio">⌂ Inicio</a>
-                <a href="nosotros.html">⚡ Nosotros</a>
+                <a href="landingpage.html" class="nav-link">Inicio</a>
+                <a href="nosotros.html" class="nav-link">Nosotros</a>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-trigger">✧ Ayúdanos a ayudar <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="dropdown-trigger nav-link">Ayúdanos a ayudar <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="#exterior">✦ Desde el Exterior</a>
-                        <a href="donacion.html">⋆ En Efectivo</a>
-                        <a href="especie.html">✧ En Especie</a>
+                        <a href="donacion.html">En Dinero</a>
+                        <a href="especie.html">En Especie</a>
                     </div>
                 </div>
-                <a href="donacion.html">⚡ Regala Generosidad</a>
-                <a href="#contacto">✧ Contáctenos</a>
+                <a href="regala_generosidad.html" class="nav-link">Regala Generosidad</a>
+                <a href="#contacto" class="nav-link">Contáctenos</a>
             </nav>
         </div>
     </header>
@@ -34,26 +34,30 @@
     <div class="carousel">
         <div class="carousel-inner">
             <div class="carousel-slide active" style="background-image: url('../img/bq.jpg')">
-                <img src="../img/empleados3.png" alt="Empleados" class="carousel-overlay-image">
+                <div class="carousel-overlay"></div>
+                <img src="../img/empleados3.png" alt="Empleados" class="carousel-overlay-image animate__animated animate__fadeIn">
                 <div class="carousel-content">
-                    <h2 class="shatter-text">Juntos Contra el Hambre</h2>
-                    <p class="fade-in-text">Tu apoyo hace la diferencia en nuestra comunidad</p>
+                    <h2 class="shatter-text animate__animated animate__fadeInDown">Juntos Contra el Hambre</h2>
+                    <p class="fade-in-text animate__animated animate__fadeInUp">Tu apoyo hace la diferencia en nuestra comunidad</p>
+                    <a href="#" class="carousel-btn pulse">¡Únete Ahora!</a>
                 </div>
-                <div class="shatter-overlay"></div>
             </div>
             <div class="carousel-slide" style="background-image: url('../img/baq2.jpeg')">
-                <img src="../img/empleados4.png" alt="Empleados" class="carousel-overlay-image">
+                <div class="carousel-overlay"></div>
+                <img src="../img/empleados4.png" alt="Empleados" class="carousel-overlay-image animate__animated animate__fadeIn">
                 <div class="carousel-content">
-                    <h2>Voluntariado</h2>
-                    <p>Únete a nuestra causa y ayuda a quienes más lo necesitan</p>
+                    <h2 class="animate__animated animate__fadeInDown">Voluntariado</h2>
+                    <p class="animate__animated animate__fadeInUp">Únete a nuestra causa y ayuda a quienes más lo necesitan</p>
+                    <a href="#" class="carousel-btn pulse">¡Inscríbete!</a>
                 </div>
             </div>
             <div class="carousel-slide" style="background-image: url('../img/baq3.jpg')">
-                <img src="../img/niños.webp" alt="Niños beneficiarios" class="carousel-overlay-image">
-                <div class="carousel-content" style="bottom: 100px;">
-                    <h2>Donaciones</h2>
-                    <p>Cada aporte cuenta para combatir la inseguridad alimentaria</p>
-                    <a href="#" class="carousel-btn">¡Dona Ya!</a>
+                <div class="carousel-overlay"></div>
+                <img src="../img/niños.webp" alt="Niños beneficiarios" class="carousel-overlay-image animate__animated animate__fadeIn">
+                <div class="carousel-content">
+                    <h2 class="animate__animated animate__fadeInDown">Donaciones</h2>
+                    <p class="animate__animated animate__fadeInUp">Cada aporte cuenta para combatir la inseguridad alimentaria</p>
+                    <a href="#" class="carousel-btn pulse">¡Dona Ya!</a>
                 </div>
             </div>
         </div>
@@ -69,31 +73,41 @@
     </div>
 
     <div class="donation-hero fade-up">
-        <div class="donation-hero-buttons">
-            <a href="#" class="hero-donation-btn">¡Dona Ya!</a>
-            <a href="#" class="hero-donation-btn">Dona Mensual</a>
+        <div class="donation-hero-content">
+            <h2 class="animate__animated animate__fadeIn">¡Tu ayuda transforma vidas!</h2>
+            <div class="donation-hero-buttons">
+                <a href="donacion.html" class="hero-donation-btn pulse">
+                    <i class="fas fa-heart"></i> ¡Dona Ya!
+                </a>
+            </div>
         </div>
     </div>
 
     <div class="main-cards">
         <div class="card fade-up" style="animation-delay: 0.2s">
             <div class="card-content">
+                <i class="fas fa-gift card-icon"></i>
                 <h2>BONOS DE CONDOLENCIAS Y GENEROSIDAD</h2>
-                <a href="#" class="btn-saber-mas">Saber más</a>
+                <p>Apoya a quienes más lo necesitan en momentos difíciles</p>
+                <a href="regala_generosidad.html" class="btn-saber-mas pulse">Saber más</a>
             </div>
         </div>
 
         <div class="card fade-up" style="animation-delay: 0.4s">
             <div class="card-content">
+                <i class="fas fa-hands-helping card-icon"></i>
                 <h2>QUIERO SER BENEFICIARIO</h2>
-                <a href="#" class="btn-saber-mas">Saber más</a>
+                <p>Conoce cómo podemos ayudarte</p>
+                <a href="#" class="btn-saber-mas pulse">Saber más</a>
             </div>
         </div>
 
         <div class="card fade-up" style="animation-delay: 0.6s">
             <div class="card-content">
+                <i class="fas fa-heart card-icon"></i>
                 <h2>QUIERO SER VOLUNTARIO</h2>
-                <a href="#" class="btn-saber-mas">Saber más</a>
+                <p>Únete a nuestro equipo de voluntarios</p>
+                <a href="#" class="btn-saber-mas pulse">Saber más</a>
             </div>
         </div>
     </div>
@@ -133,40 +147,7 @@
         </div>
     </section>
 
-    <section class="donantes-section">
-        <h2>NUESTROS DONANTES</h2>
-        <div class="donantes-container">
-            <button class="donantes-control prev">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <div class="donantes-slider">
-                <div class="donante-logo">
-                    <img src="img/donantes/cruz-verde.png" alt="Cruz Verde">
-                </div>
-                <div class="donante-logo">
-                    <img src="img/donantes/upfield.png" alt="Upfield">
-                </div>
-                <div class="donante-logo">
-                    <img src="img/donantes/cascabel.png" alt="Cascabel">
-                </div>
-                <div class="donante-logo">
-                    <img src="img/donantes/rico.png" alt="Rico">
-                </div>
-                <div class="donante-logo">
-                    <img src="img/donantes/alimentos-carnicos.png" alt="Alimentos Cárnicos">
-                </div>
-                <div class="donante-logo">
-                    <img src="img/donantes/la-recetta.png" alt="La Recetta">
-                </div>
-                <div class="donante-logo">
-                    <img src="img/donantes/meals.png" alt="Meals de Colombia S.A.">
-                </div>
-            </div>
-            <button class="donantes-control next">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
-    </section>
+
 
     <section class="donaciones-especie-section">
         <div class="donaciones-especie-container">
@@ -212,9 +193,9 @@
                 <div class="redes-sociales">
                     <h3>Síguenos</h3>
                     <div class="social-icons">
-                        <a href="#" class="social-icon" title="@banalimentos.baq"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon" title="@Banco de Alimentos Barranquilla"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon" title="@balimentosbaq"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/banalimentos.baq/" class="social-icon" title="@banalimentos.baq" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100093143110858" class="social-icon" title="@Banco de Alimentos Barranquilla" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/Balimentosbaq" class="social-icon" title="@balimentosbaq" target="_blank"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
