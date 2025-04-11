@@ -2,7 +2,7 @@
 .generosidad-hero {
     height: 80vh;
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/hero-generosidad.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/niño2.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -38,6 +38,16 @@
     background: linear-gradient(45deg, #4CAF50, #45a049);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: titleGlow 2s infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+    }
 }
 
 .hero-quote {
