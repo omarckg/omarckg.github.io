@@ -1,13 +1,24 @@
+/* Variables de colores */
+:root {
+    --vinotinto: #6B181B;
+    --vinotinto-claro: #A02A2F;
+    --vinotinto-oscuro: #3D0D0F;
+    --dorado: #F6C667;
+    --beige: #FFF8DC;
+    --verde-acento: #7BA23F;
+    --gris-texto: #333;
+}
+
 body {
-    background-color: #f8f8f0; /* Color de fondo */
-    color: #398965; /* Color del texto */
+    background-color: var(--beige);
+    color: var(--vinotinto);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #398965; /* Color del encabezado */
+    background-color: var(--vinotinto);
 }
 
 nav {
@@ -83,11 +94,11 @@ nav a:hover {
 }
 
 .info-suggestions h2 {
-    color: #f1efb5;
+    color: var(--crema);
     text-align: center;
     font-size: 2em;
     margin-bottom: 30px;
-    background-color: #398965;
+    background-color: var(--vinotinto);
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -95,13 +106,13 @@ nav a:hover {
 
 .suggestion-card {
     background-color: white;
-    border: 2px solid #398965;
-    box-shadow: 0 5px 15px rgba(57, 137, 101, 0.1);
+    border: 2px solid var(--vinotinto);
+    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.1);
 }
 
 .suggestion-card:hover {
-    border-color: #4aa67c;
-    box-shadow: 0 8px 25px rgba(57, 137, 101, 0.2);
+    border-color: var(--vinotinto-claro);
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.2);
 }
 
 .info-section {
@@ -114,21 +125,21 @@ nav a:hover {
 
 .info-card {
     background-color: white;
-    border: 2px solid #398965; /* Color del borde */
+    border: 2px solid var(--vinotinto);
     border-radius: 10px;
-    padding: 15px; /* Ajustar el padding interno */
-    height: 150px; /* Altura fija para las tarjetas */
-    width: 300px; /* Aumentar el ancho de las tarjetas */
-    display: flex; /* Usar flexbox para el contenido */
-    flex-direction: column; /* Colocar el contenido en columna */
-    justify-content: center; /* Centrar verticalmente */
-    align-items: center; /* Centrar horizontalmente */
-    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones para la animación */
+    padding: 15px;
+    height: 150px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .info-card:hover {
-    transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(139, 0, 0, 0.2);
 }
 
 section {
@@ -138,12 +149,12 @@ section {
 footer {
     text-align: center;
     padding: 15px 20px;
-    background-color: #398965;
+    background-color: var(--vinotinto);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 footer p {
-    color: #f1efb5;
+    color: var(--crema);
     font-size: 0.9em;
     margin: 0;
 }
@@ -168,26 +179,22 @@ input, textarea {
 button {
     margin-top: 10px;
     padding: 10px;
-    background-color: #ef8639; /* Color del botón */
+    background-color: var(--vinotinto);
     border: none;
-    color: white;
+    color: var(--crema);
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #dad87a; /* Color al pasar el mouse */
+    background-color: var(--vinotinto-claro);
 }
 
 /* Estilos para el nuevo navbar */
 .navbar-modern {
-    background-color: #398965;
-    padding: 0.5rem 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: var(--vinotinto) !important;
+    margin-bottom: 0 !important;
+    border-bottom: none !important;
 }
 
 .navbar-container {
@@ -200,28 +207,30 @@ button:hover {
 }
 
 .navbar-logo {
+    background: none !important;
     display: flex;
     align-items: center;
     margin-right: 2rem;
+    padding: 0;
 }
 
 .navbar-logo img {
-    height: 70px;
-    margin-right: 15px;
+    background: var(--beige) !important;
     border-radius: 12px;
-    transition: transform 0.3s ease;
+    padding: 6px;
+    height: 56px;
+    margin-right: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
 }
 
-.navbar-logo img:hover {
-    transform: scale(1.05);
-}
-
-.navbar-logo h1 {
-    color: #f1efb5;
-    margin: 0;
-    font-size: 1.4em;
+.navbar-logo h1, .navbar-logo .text-gradient {
+    color: var(--dorado) !important;
+    background: none !important;
+    -webkit-text-fill-color: var(--dorado) !important;
+    font-size: 1.5em;
     font-weight: bold;
-    line-height: 1.2;
+    margin: 0;
+    line-height: 1.1;
 }
 
 .navbar-menu {
@@ -233,7 +242,7 @@ button:hover {
 }
 
 .navbar-menu a, .dropdown-trigger {
-    color: #f1efb5;
+    color: var(--crema);
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -244,8 +253,8 @@ button:hover {
 }
 
 .navbar-menu a:hover, .dropdown-trigger:hover {
-    background-color: rgba(241, 239, 181, 0.1);
-    color: #dad87a;
+    background-color: var(--vinotinto-claro);
+    color: var(--dorado-claro);
 }
 
 /* Estilos para los botones de donación en el navbar */
@@ -328,7 +337,7 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(8, 88, 52); /* Color verde semitransparente */
+    background-color: rgba(139, 0, 0, 0.2); /* Color verde semitransparente */
     z-index: 1;
     transition: opacity 0.8s ease;
 }
@@ -380,7 +389,7 @@ button:hover {
 }
 
 .carousel-control {
-    background-color: rgba(57, 137, 101, 0.7);
+    background-color:rgba(139, 0, 0, 0.2);
     color: #f1efb5;
     border: none;
     padding: 1rem;
@@ -395,7 +404,7 @@ button:hover {
 }
 
 .carousel-control:hover {
-    background-color: rgba(57, 137, 101, 0.9);
+    background-color: rgba(139, 0, 0, 0.2);
 }
 
 .carousel-indicators {
@@ -417,7 +426,7 @@ button:hover {
 }
 
 .carousel-indicator.active {
-    background-color: #398965;
+    background-color: rgba(139, 0, 0, 0.2);
 }
 
 /* Estilos para los botones de donación */
@@ -430,7 +439,7 @@ button:hover {
 }
 
 .donation-btn {
-    background-color: #398965;
+    background-color:var(--dorado);
     color: #f1efb5;
     padding: 15px 60px;
     border-radius: 5px;
@@ -499,19 +508,21 @@ button:hover {
 }
 
 .btn-saber-mas {
-    display: inline-block;
-    background-color: #2c6b4d;
-    color: #f1efb5;
-    padding: 10px 30px;
-    border-radius: 5px;
+    background-color: var(--vinotinto);
+    color: var(--crema);
+    padding: 10px 25px;
+    border-radius: 25px;
     text-decoration: none;
-    margin-top: 20px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 15px;
 }
 
 .btn-saber-mas:hover {
-    background-color: #235c41;
-    transform: translateY(-3px);
+    background-color: var(--vinotinto-claro);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.2);
 }
 
 /* Animaciones */
@@ -1065,7 +1076,7 @@ section h2 {
 }
 
 .contacto-info h2 {
-    color: #398965;
+    color: var(--vinotinto);
     font-size: 2.5em;
     margin-bottom: 40px;
     background: none;
@@ -1099,10 +1110,10 @@ section h2 {
 
 .info-item i {
     font-size: 24px;
-    color: #398965;
+    color: var(--vinotinto);
     margin-right: 20px;
     padding: 15px;
-    background-color: rgba(57, 137, 101, 0.1);
+    background-color:  var(--dorado);
     border-radius: 50%;
 }
 
@@ -1111,7 +1122,7 @@ section h2 {
 }
 
 .info-item h3 {
-    color: #398965;
+    color: var(--dorado);
     margin-bottom: 8px;
     font-size: 1.2em;
 }
@@ -1127,7 +1138,7 @@ section h2 {
 }
 
 .redes-sociales h3 {
-    color: #398965;
+    color: var(--dorado);
     margin-bottom: 20px;
     font-size: 1.4em;
 }
@@ -1138,21 +1149,21 @@ section h2 {
 }
 
 .social-icon {
-    width: 45px;
-    height: 45px;
-    background-color: #398965;
-    color: #f1efb5;
+    background: var(--vinotinto) !important;
+    color: var(--dorado) !important;
     border-radius: 50%;
+    width: 55px;
+    height: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    font-size: 2rem;
+    transition: background 0.3s, color 0.3s;
 }
 
 .social-icon:hover {
-    background-color: #ef8639;
-    transform: translateY(-3px);
+    background: var(--dorado) !important;
+    color: var(--vinotinto) !important;
 }
 
 .contacto-mapa {
@@ -1218,7 +1229,7 @@ section h2 {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #398965;
+    background-color: var(--dorado);
     min-width: 200px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     border-radius: 0 0 8px 8px;
@@ -1232,7 +1243,7 @@ section h2 {
 }
 
 .dropdown-content a {
-    color: #398965;
+    color:  var(--dorado);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -1240,7 +1251,7 @@ section h2 {
 }
 
 .dropdown-content a:hover {
-    background-color: #398965;
+    background-color:var(--dorado);
     color: #f1efb5;
 }
 
@@ -1458,18 +1469,18 @@ section h2 {
 }
 
 .carousel-btn {
-    display: inline-block;
-    background-color: #ef8639;
-    color: #f1efb5;
-    padding: 12px 40px;
+    background-color: var(--vinotinto);
+    color: var(--crema);
+    padding: 12px 30px;
+    border: none;
     border-radius: 25px;
-    text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: bold;
-    margin-top: 20px;
+    cursor: pointer;
     transition: all 0.3s ease;
-    border: 2px solid #ef8639;
-    opacity: 0;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.2);
 }
 
 .carousel-slide.active .carousel-btn {
@@ -1478,10 +1489,9 @@ section h2 {
 }
 
 .carousel-btn:hover {
-    background-color: transparent;
-    color: #f1efb5;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(239, 134, 57, 0.3);
+    background-color: var(--vinotinto-claro);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 0, 0, 0.3);
 }
 
 .chat-button {
@@ -1582,4 +1592,87 @@ section h2 {
 
 .chat-action button:hover {
     background-color: #2c6b4c;
+}
+
+/* Cambiar navbar y menús */
+.navbar-modern, .navbar-menu, .dropdown-content, .navbar-logo, .navbar-container {
+    background-color: var(--vinotinto) !important;
+}
+
+.navbar-menu a, .dropdown-trigger, .dropdown-content a {
+    color: var(--beige) !important;
+}
+
+.navbar-menu a:hover, .dropdown-trigger:hover, .dropdown-content a:hover {
+    background-color: var(--vinotinto-claro) !important;
+    color: var(--dorado) !important;
+}
+
+/* Cambiar botones principales */
+button, .btn-donar, .btn-saber-mas, .donation-btn, .carousel-btn, .hero-donation-btn, .chat-button {
+    background-color: var(--vinotinto) !important;
+    color: var(--beige) !important;
+    border: none !important;
+}
+
+button:hover, .btn-donar:hover, .btn-saber-mas:hover, .donation-btn:hover, .carousel-btn:hover, .hero-donation-btn:hover, .chat-button:hover {
+    background-color: var(--vinotinto-claro) !important;
+    color: var(--dorado) !important;
+}
+
+/* Cambiar cards principales */
+.card, .main-cards .card, .suggestion-card, .info-card {
+    background-color: var(--vinotinto) !important;
+    color: var(--beige) !important;
+    border: none !important;
+}
+
+.card h2, .main-cards .card h2, .suggestion-card h2, .info-card h2 {
+    color: var(--dorado) !important;
+}
+
+/* Cambiar controles del carrusel */
+.carousel-control, .carousel-indicator.active {
+    background-color: var(--vinotinto) !important;
+    color: var(--beige) !important;
+    border: none !important;
+}
+
+.carousel-control:hover {
+    background-color: var(--vinotinto-claro) !important;
+}
+
+/* Cambiar headers y títulos */
+section h2, .stats-header h2, .stats-header h3, .info-suggestions h2 {
+    background-color: var(--vinotinto) !important;
+    color: var(--beige) !important;
+}
+
+h1, h2, h3, .section-title, .titulo-verde, section h2, .stats-header h2, .stats-header h3, .info-suggestions h2 {
+    color: var(--dorado) !important;
+}
+
+body, section, .main-cards, .info-section, .stats-section, .donaciones-especie-section, .contacto-section {
+    background-color: var(--beige) !important;
+}
+
+.contacto-info h2 {
+    background: var(--vinotinto) !important;
+    color: var(--dorado) !important;
+    display: inline-block;
+    padding: 0.2em 0.8em;
+    border-radius: 12px;
+    font-weight: bold;
+    position: relative;
+}
+.contacto-info h2::after {
+    background: var(--dorado) !important;
+    height: 5px;
+    border-radius: 3px;
+}
+
+main, .carousel, .main-cards, section, .donation-hero, .donation-hero-buttons {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    background: none !important;
 }

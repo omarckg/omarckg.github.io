@@ -1,3 +1,14 @@
+/* Variables de colores */
+:root {
+    --vinotinto: #6B181B;
+    --vinotinto-claro: #A02A2F;
+    --vinotinto-oscuro: #3D0D0F;
+    --dorado: #F6C667;
+    --beige: #FFF8DC;
+    --verde-acento: #7BA23F;
+    --gris-texto: #333;
+}
+
 /* Hero Section */
 .generosidad-hero {
     height: 80vh;
@@ -33,20 +44,19 @@
 .generosidad-hero h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: none;
     letter-spacing: 2px;
-    background: linear-gradient(45deg, #4CAF50, #45a049);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: none;
+    -webkit-text-fill-color: var(--vinotinto);
     animation: titleGlow 2s infinite alternate;
 }
 
 @keyframes titleGlow {
     0% {
-        text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+        text-shadow:  0 0 20px rgba(255, 241, 88, 0.8);;
     }
     100% {
-        text-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+        text-shadow: 0 0 20px rgba(255, 241, 88, 0.8);;
     }
 }
 
@@ -54,7 +64,8 @@
     font-size: 1.5rem;
     font-style: italic;
     margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-shadow: none;
+    color: var(--vinotinto);
 }
 
 /* Sección ¿Qué hacemos? */
@@ -77,11 +88,12 @@
 }
 
 .que-hacemos-card {
-    background: white;
+    background: var(--vinotinto) !important;
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: none;
     transition: transform 0.3s ease;
+    color: var(--beige) !important;
 }
 
 .que-hacemos-card:hover {
@@ -91,18 +103,18 @@
 
 .que-hacemos-card i {
     font-size: 3rem;
-    color: #4CAF50;
+    color: var(--dorado) !important;
     margin-bottom: 1.5rem;
 }
 
 .que-hacemos-card h3 {
-    color: #333;
+    color: var(--beige) !important;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
 .que-hacemos-card p {
-    color: #666;
+    color: var(--beige) !important;
     line-height: 1.6;
 }
 
@@ -126,11 +138,12 @@
 }
 
 .grupo-card {
-    background: white;
+    background: var(--vinotinto) !important;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: none;
     transition: transform 0.3s ease;
+    color: var(--beige) !important;
 }
 
 .grupo-card:hover {
@@ -149,13 +162,13 @@
 }
 
 .grupo-info h3 {
-    color: #333;
+    color: var(--beige) !important;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
 .grupo-info p {
-    color: #666;
+    color: var(--beige) !important;
     line-height: 1.6;
 }
 
@@ -179,11 +192,12 @@
 }
 
 .programa-card {
-    background: white;
+    background: var(--vinotinto) !important;
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: none;
     transition: transform 0.3s ease;
+    color: var(--beige) !important;
 }
 
 .programa-card:hover {
@@ -193,26 +207,26 @@
 
 .programa-card i {
     font-size: 3rem;
-    color: #4CAF50;
+    color: var(--dorado) !important;
     margin-bottom: 1.5rem;
 }
 
 .programa-card h3 {
-    color: #333;
+    color: var(--beige) !important;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
 .programa-card p {
-    color: #666;
+    color: var(--beige) !important;
     line-height: 1.6;
 }
 
 /* CTA Section */
 .cta-section {
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
-    color: white;
+    background: var(--vinotinto) !important;
+    color: var(--beige) !important;
     text-align: center;
 }
 
@@ -243,16 +257,19 @@
     align-items: center;
     gap: 10px;
     padding: 15px 30px;
-    background: white;
-    color: #4CAF50;
+    background: var(--vinotinto) !important;
+    color: var(--beige) !important;
     text-decoration: none;
     border-radius: 30px;
     font-weight: bold;
     font-size: 1.2rem;
     transition: all 0.3s ease;
+    box-shadow: none;
 }
 
 .cta-btn:hover {
+    background: var(--vinotinto-claro) !important;
+    color: var(--dorado) !important;
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
@@ -283,4 +300,73 @@
         max-width: 300px;
         justify-content: center;
     }
+}
+
+h1, h2, h3, .section-title {
+    color: var(--dorado) !important;
+}
+
+.social-icon {
+    background: var(--vinotinto) !important;
+    color: var(--dorado) !important;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    transition: background 0.3s, color 0.3s;
+}
+.social-icon:hover {
+    background: var(--dorado) !important;
+    color: var(--vinotinto) !important;
+}
+
+.contacto-info h2 {
+    background: var(--vinotinto) !important;
+    color: var(--dorado) !important;
+    display: inline-block;
+    padding: 0.2em 0.8em;
+    border-radius: 12px;
+    font-weight: bold;
+    position: relative;
+}
+.contacto-info h2::after {
+    background: var(--dorado) !important;
+    height: 5px;
+    border-radius: 3px;
+}
+
+.navbar-modern {
+    background: var(--vinotinto) !important;
+    margin-bottom: 0 !important;
+    border-bottom: none !important;
+}
+
+.navbar-logo {
+    background: none !important;
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+    padding: 0;
+}
+
+.navbar-logo img {
+    background: var(--beige) !important;
+    border-radius: 12px;
+    padding: 6px;
+    height: 56px;
+    margin-right: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.navbar-logo h1, .navbar-logo .text-gradient {
+    color: var(--dorado) !important;
+    background: none !important;
+    -webkit-text-fill-color: var(--dorado) !important;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.1;
 } 

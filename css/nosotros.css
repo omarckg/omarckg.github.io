@@ -1,3 +1,14 @@
+/* Variables de colores */
+:root {
+    --vinotinto: #6B181B;
+    --vinotinto-claro: #A02A2F;
+    --vinotinto-oscuro: #3D0D0F;
+    --dorado: #F6C667;
+    --beige: #FFF8DC;
+    --verde-acento: #7BA23F;
+    --gris-texto: #333;
+}
+
 /* Hero Section */
 .hero-nosotros {
     height: 80vh;
@@ -34,20 +45,19 @@
 .hero-nosotros h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: none;
     letter-spacing: 2px;
-    background: linear-gradient(45deg, #4CAF50, #45a049);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: none;
+    -webkit-text-fill-color: var(--vinotinto);
     animation: titleGlow 2s infinite alternate;
 }
 
 @keyframes titleGlow {
     0% {
-        text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+        text-shadow: 0 0 10px var(--dorado);
     }
     100% {
-        text-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+        text-shadow: 0 0 20px var(--dorado);
     }
 }
 
@@ -55,7 +65,7 @@
     font-size: 1.5rem;
     font-style: italic;
     margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-shadow: none;
 }
 
 /* Misión Section */
@@ -123,6 +133,10 @@
     margin-bottom: 2rem;
     position: relative;
     padding-bottom: 1rem;
+    background: none;
+    color: var(--vinotinto);
+    -webkit-text-fill-color: var(--dorado);
+    text-shadow: none;
 }
 
 .section-title::after {
@@ -132,16 +146,19 @@
     left: 0;
     width: 100px;
     height: 4px;
-    background: linear-gradient(90deg, #4CAF50, #45a049);
+    background: var(--dorado);
     border-radius: 2px;
 }
 
 .mision-texto {
-    background: white;
+    background: var(--vinotinto);
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    color: #FFF8DC !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em;
 }
 
 .mision-texto:hover {
@@ -151,7 +168,9 @@
 .mision-texto p {
     font-size: 1.2rem;
     line-height: 1.8;
-    color: #333;
+    color: #FFF8DC !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em;
 }
 
 /* Qué es Section */
@@ -182,6 +201,10 @@
     margin-bottom: 2rem;
     position: relative;
     padding-bottom: 1rem;
+    background: none;
+    color: var(--vinotinto);
+    -webkit-text-fill-color: var(--dorado);
+    text-shadow: none;
 }
 
 .titulo-verde::after {
@@ -191,16 +214,19 @@
     left: 0;
     width: 100px;
     height: 4px;
-    background: linear-gradient(90deg, #4CAF50, #45a049);
+    background: var(--dorado);
     border-radius: 2px;
 }
 
 .que-es-texto {
-    background: #f8f9fa;
+    background: var(--vinotinto);
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    color: #FFF8DC !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em;
 }
 
 .que-es-texto:hover {
@@ -210,7 +236,9 @@
 .que-es-texto p {
     font-size: 1.2rem;
     line-height: 1.8;
-    color: #333;
+    color: #FFF8DC !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em;
     margin-bottom: 1.5rem;
 }
 
@@ -240,20 +268,20 @@
 .btn-donar {
     display: inline-block;
     padding: 1rem 2rem;
-    background: linear-gradient(135deg, #4CAF50, #45a049);
-    color: white;
+    background: var(--vinotinto);
+    color: var(--beige);
     text-decoration: none;
     border-radius: 30px;
     font-weight: bold;
     font-size: 1.2rem;
     margin-top: 2rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    box-shadow: none;
 }
 
 .btn-donar:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+    background: var(--vinotinto-claro);
+    color: var(--dorado);
 }
 
 .que-es-mapa {
@@ -356,4 +384,113 @@
     .donacion-container {
         margin-top: 30px;
     }
+}
+
+h1, h2, h3, .section-title, .titulo-verde {
+    color: var(--dorado) !important;
+}
+
+.contacto-info h2 {
+    background: var(--vinotinto) !important;
+    color: var(--dorado) !important;
+    display: inline-block;
+    padding: 0.2em 0.8em;
+    border-radius: 12px;
+    font-weight: bold;
+    position: relative;
+}
+.contacto-info h2::after {
+    background: var(--dorado) !important;
+    height: 5px;
+    border-radius: 3px;
+}
+
+.contacto-info h3, .info-item i {
+    color: var(--vinotinto) !important;
+}
+.info-item p {
+    color: var(--beige) !important;
+}
+
+.social-icon {
+    background: var(--vinotinto) !important;
+    color: var(--dorado) !important;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    transition: background 0.3s, color 0.3s;
+}
+.social-icon:hover {
+    background: var(--dorado) !important;
+    color: var(--vinotinto) !important;
+}
+
+.navbar-modern {
+    padding: 0.5rem 0 !important;
+    min-height: 70px;
+    background: var(--vinotinto) !important;
+    margin-bottom: 0 !important;
+    border-bottom: none !important;
+}
+
+.navbar-logo {
+    background: none !important;
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+    padding: 0;
+}
+
+.navbar-logo img {
+    height: 56px !important;
+    min-height: 56px;
+    max-height: 56px;
+    background: var(--beige) !important;
+    border-radius: 12px;
+    padding: 6px;
+    margin-right: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.navbar-logo h1, .navbar-logo .text-gradient {
+    color: var(--dorado) !important;
+    background: none !important;
+    -webkit-text-fill-color: var(--dorado) !important;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.1;
+}
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+}
+.navbar-menu a, .dropdown-trigger {
+    color: var(--crema);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 0.95em;
+}
+
+.navbar-menu a:hover, .dropdown-trigger:hover {
+    background-color: var(--vinotinto-claro);
+    color: var(--dorado-claro);
 }
