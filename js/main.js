@@ -3,11 +3,15 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar-modern');
         if (window.scrollY > 50) {
-            navbar.style.backgroundColor = '#2c6b4d';
+            navbar.classList.remove('navbar-transparent');
         } else {
-            navbar.style.backgroundColor = '#398965';
+            navbar.classList.add('navbar-transparent');
         }
     });
+
+    // Al cargar la página, asegúrate de que el navbar sea transparente
+    const navbar = document.querySelector('.navbar-modern');
+    navbar.classList.add('navbar-transparent');
 
     // Animaciones de fade-up
     const fadeUpElements = document.querySelectorAll('.fade-up');

@@ -4,7 +4,7 @@
     --vinotinto-claro: #A02A2F;
     --vinotinto-oscuro: #3D0D0F;
     --dorado: #F6C667;
-    --beige: #FFF8DC;
+    --beige: #FFFDF5;
     --verde-acento: #7BA23F;
     --gris-texto: #333;
 }
@@ -54,38 +54,179 @@ nav a:hover {
     color: #dad87a; /* Color al pasar el mouse */
 }
 
-.hero {
+.hero-banner {
     position: relative;
-    height: 400px; /* Ajusta la altura según sea necesario */
-    background-image: url('img/abaco.jpeg'); /* Cambia esto por la ruta de tu imagen */
-    background-size: contain; /* La imagen se ajustará dentro de la sección */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
-.hero-content {
+.hero-bg {
     position: absolute;
-    top: 0; /* Comienza desde la parte superior */
-    left: -100%; /* Comienza fuera de la pantalla a la izquierda */
-    width: 50%; /* Ocupa la mitad de la sección */
-    height: 100%; /* Ocupa toda la altura de la sección */
-    background-color: rgba(0, 0, 0, 0); /* Fondo semi-transparente */
-    padding: 20px;
-    color: white;
-    display: flex; /* Usar flexbox para el contenido */
-    flex-direction: column; /* Colocar el contenido en columna */
-    justify-content: center; /* Centrar verticalmente */
-    animation: slideIn 1s forwards; /* Animación de entrada */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/b2.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
 }
 
-@keyframes slideIn {
-    from {
-        left: -100%; /* Comienza fuera de la pantalla a la izquierda */
-    }
-    to {
-        left: 0; /* Posición final */
-    }
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(246, 198, 103, 0.341);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    text-align: center;
+    color: #FFF8DC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-logos {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.hero-logos img {
+    height: 70px;
+    background: #FFF8DC;
+    border-radius: 12px;
+    padding: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--beige);
+    text-shadow: 2px 2px 8px var(--vinotinto);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-subtitle {
+    font-size: 1.7rem;
+    color: var(--beige);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 6px var(--vinotinto);
+}
+
+.hero-info {
+    font-size: 1.1rem;
+    color: var(--vinotinto);
+    margin-bottom: 2rem;
+    font-weight: 600;
+    background: rgba(255,255,255,0.4);
+    display: inline-block;
+    padding: 0.3em 1em;
+    border-radius: 8px;
+}
+
+.hero-donate-btn {
+    background: var(--vinotinto);
+    color: var(--beige);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.7em 2.5em;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    display: inline-block;
+    margin-top: 1.5rem;
+    letter-spacing: 1px;
+    border: none;
+}
+.hero-donate-btn:hover {
+    background: var(--vinotinto-claro);
+    color: var(--dorado);
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* Estilos para la imagen de ABACO en el banner */
+.abaco-logo-banner {
+    position: absolute;
+    top: 100px; /* Ajusta la distancia desde arriba para que quede debajo del navbar */
+    right: 360px; /* Ajusta la distancia para que haya 20px entre cada imagen y el borde derecho */
+    width: 150px; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    z-index: 5; /* Asegura que esté sobre el fondo pero bajo el navbar */
+    opacity: 0.8; /* Ajusta la opacidad si quieres que se mezcle un poco */
+    transition: opacity 0.3s ease;
+}
+
+.abaco-logo-banner:hover {
+    opacity: 1;
+}
+
+/* Estilos para la imagen de Pastoral Social en el banner */
+.pastoral-logo-banner {
+    position: absolute;
+    top: 80px; /* Debe tener el mismo 'top' que la imagen de ABACO */
+    right: 190px; /* Posiciona al lado de la imagen de Arquidiocesis, dejando 20px de espacio */
+    width: 150px; /* Ajusta el tamaño para que sea similar al de ABACO */
+    height: auto;
+    z-index: 5; /* Mismo z-index que ABACO */
+    opacity: 0.8; /* Misma opacidad que ABACO */
+    transition: opacity 0.3s ease;
+}
+
+.pastoral-logo-banner:hover {
+    opacity: 1;
+}
+
+/* Estilos para la imagen de Arquidiocesis en el banner */
+.arquidiocesis-logo-banner {
+    position: absolute;
+    top: 50px; /* Mismo 'top' que las otras imágenes */
+    right: 50px; /* La más a la derecha, a 20px del borde derecho */
+    width: 150px; /* Ajusta el tamaño para que sea similar a las otras */
+    height: auto;
+    z-index: 5; /* Mismo z-index que las otras */
+    opacity: 0.8; /* Misma opacidad que las otras */
+    transition: opacity 0.3s ease;
+}
+
+.arquidiocesis-logo-banner:hover {
+    opacity: 1;
+}
+
+/* Estilos para el logo principal del Banco de Alimentos en el banner */
+.main-logo-banner {
+    position: absolute;
+    top: 100px; /* Ajusta para que quede debajo del navbar */
+    left: 60px; /* Distancia desde la izquierda */
+    width: 170px; /* Ajusta el tamaño según necesites */
+    height: auto;
+    z-index: 5; /* Asegura que esté sobre el fondo del banner */
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+    opacity: 0.8; /* Añadir opacidad para que se vea semitransparente */
+}
+
+.main-logo-banner:hover {
+    opacity: 1;
 }
 
 .info-suggestions {
@@ -189,13 +330,26 @@ button {
 button:hover {
     background-color: var(--vinotinto-claro);
 }
+header.navbar-modern.navbar-transparent {
+    background: transparent !important;
+    box-shadow: none !important;
+    transition: background 0.4s, box-shadow 0.4s;
+}
 
 /* Estilos para el nuevo navbar */
-.navbar-modern {
+header.navbar-modern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
     background: var(--vinotinto) !important;
-    margin-bottom: 0 !important;
-    border-bottom: none !important;
+    transition: background 0.4s, box-shadow 0.4s;
 }
+
+
+/* Los hijos del navbar no deben tener fondo */
+
 
 .navbar-container {
     display: flex;
@@ -204,14 +358,15 @@ button:hover {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
+    transition: background 0.4s, box-shadow 0.4s;
 }
 
 .navbar-logo {
-    background: none !important;
     display: flex;
     align-items: center;
     margin-right: 2rem;
     padding: 0;
+    transition: background 1s, box-shadow 1s;
 }
 
 .navbar-logo img {
@@ -219,8 +374,18 @@ button:hover {
     border-radius: 12px;
     padding: 6px;
     height: 56px;
-    margin-right: 12px;
+    margin-right: 12px; /* Espacio entre el logo y el texto */
     box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    /* Propiedades para la animación */
+    opacity: 1; /* Visible por defecto */
+    transform: translateX(0); /* Posición normal por defecto */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+header.navbar-modern.navbar-transparent .navbar-logo img {
+    /* Estado cuando el navbar es transparente */
+    opacity: 0;
+    transform: translateX(-20px); /* Deslizar ligeramente hacia la izquierda cuando está oculto */
 }
 
 .navbar-logo h1, .navbar-logo .text-gradient {
@@ -231,6 +396,14 @@ button:hover {
     font-weight: bold;
     margin: 0;
     line-height: 1.1;
+    transition: transform 0.5s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+header.navbar-modern.navbar-transparent .navbar-logo h1,
+header.navbar-modern.navbar-transparent .navbar-logo .text-gradient {
+    /* Estado cuando el navbar es transparente */
+    transform: translateX(-68px); /* Mover a la izquierda para ocupar el espacio del logo oculto (ajustar si es necesario) */
 }
 
 .navbar-menu {
@@ -239,22 +412,27 @@ button:hover {
     justify-content: center;
     gap: 2rem;
     width: 100%;
+    transition: background 0.4s, box-shadow 0.4s;
+    
 }
 
 .navbar-menu a, .dropdown-trigger {
-    color: var(--crema);
+    color: var(--beige) !important;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: bold;
     transition: all 0.3s ease;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     white-space: nowrap;
     font-size: 0.95em;
+    transition: background 0.4s, box-shadow 0.4s;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .navbar-menu a:hover, .dropdown-trigger:hover {
-    background-color: var(--vinotinto-claro);
-    color: var(--dorado-claro);
+    background-color: var(--vinotinto-claro) !important;
+    color: var(--dorado) !important;
+    transition: background 0.4s, box-shadow 0.4s;
 }
 
 /* Estilos para los botones de donación en el navbar */
@@ -273,161 +451,7 @@ button:hover {
 }
 
 /* Estilos para el carrusel */
-.carousel {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-    margin-top: 80px;
-}
-
-.carousel-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.carousel-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: transform 0.8s ease, opacity 0.8s ease;
-    background-size: cover;
-    background-position: center;
-}
-
-.carousel-slide.active {
-    opacity: 1;
-    animation: zoomIn 0.8s forwards;
-}
-
-.carousel-slide:not(.active) {
-    animation: zoomOut 0.8s forwards;
-}
-
-@keyframes zoomOut {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1.2);
-        opacity: 0;
-    }
-}
-
-@keyframes zoomIn {
-    0% {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.carousel-slide::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(139, 0, 0, 0.2); /* Color verde semitransparente */
-    z-index: 1;
-    transition: opacity 0.8s ease;
-}
-
-.carousel-slide.active::before {
-    opacity: 0.5;
-}
-
-.carousel-slide:not(.active)::before {
-    opacity: 0;
-}
-
-.carousel-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 2rem;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0));
-    color: white;
-    z-index: 2;
-    opacity: 1;
-    transition: opacity 0.5s ease;
-}
-
-.carousel-content h2 {
-    color: #f1efb5;
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-.carousel-content p {
-    opacity: 1;
-    transition: opacity 0.5s ease;
-}
-
-.carousel-slide:not(.active) .carousel-content {
-    opacity: 0;
-}
-
-.carousel-controls {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1rem;
-}
-
-.carousel-control {
-    background-color:rgba(139, 0, 0, 0.2);
-    color: #f1efb5;
-    border: none;
-    padding: 1rem;
-    cursor: pointer;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.carousel-control:hover {
-    background-color: rgba(139, 0, 0, 0.2);
-}
-
-.carousel-indicators {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-}
-
-.carousel-indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: rgba(241, 239, 181, 0.5);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.carousel-indicator.active {
-    background-color: rgba(139, 0, 0, 0.2);
-}
+/* (Puedes borrar o comentar todo el bloque de estilos del carrusel si lo deseas) */
 
 /* Estilos para los botones de donación */
 .donation-buttons {
@@ -1243,7 +1267,7 @@ section h2 {
 }
 
 .dropdown-content a {
-    color:  var(--dorado);
+    color: var(--vinotinto);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -1251,8 +1275,8 @@ section h2 {
 }
 
 .dropdown-content a:hover {
-    background-color:var(--dorado);
-    color: #f1efb5;
+    background-color: var(--vinotinto);
+    color: var(--dorado);
 }
 
 @keyframes fadeIn {
@@ -1322,6 +1346,7 @@ section h2 {
         position: static;
         background-color: rgba(0,0,0,0.1);
         box-shadow: none;
+        
     }
 }
 
@@ -1597,15 +1622,18 @@ section h2 {
 /* Cambiar navbar y menús */
 .navbar-modern, .navbar-menu, .dropdown-content, .navbar-logo, .navbar-container {
     background-color: var(--vinotinto) !important;
+    transition: background 0.4s, box-shadow 0.4s;
 }
 
 .navbar-menu a, .dropdown-trigger, .dropdown-content a {
     color: var(--beige) !important;
+    transition: background 0.4s, box-shadow 0.4s;
 }
 
 .navbar-menu a:hover, .dropdown-trigger:hover, .dropdown-content a:hover {
     background-color: var(--vinotinto-claro) !important;
     color: var(--dorado) !important;
+    transition: background 0.4s, box-shadow 0.4s;
 }
 
 /* Cambiar botones principales */
@@ -1648,10 +1676,6 @@ section h2, .stats-header h2, .stats-header h3, .info-suggestions h2 {
     color: var(--beige) !important;
 }
 
-h1, h2, h3, .section-title, .titulo-verde, section h2, .stats-header h2, .stats-header h3, .info-suggestions h2 {
-    color: var(--dorado) !important;
-}
-
 body, section, .main-cards, .info-section, .stats-section, .donaciones-especie-section, .contacto-section {
     background-color: var(--beige) !important;
 }
@@ -1676,3 +1700,15 @@ main, .carousel, .main-cards, section, .donation-hero, .donation-hero-buttons {
     padding-top: 0 !important;
     background: none !important;
 }
+
+.navbar-container,
+.navbar-logo,
+.navbar-menu,
+.dropdown-content,
+.dropdown-trigger {
+    background: none !important;
+}
+
+
+
+
