@@ -26,3 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     fadeUpElements.forEach(element => observer.observe(element));
 });
+
+// js/carousel.js (ejemplo, puede que tengas ya algo similar)
+
