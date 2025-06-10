@@ -1968,6 +1968,51 @@ main, .carousel, .main-cards, .donation-hero, .donation-hero-buttons {
     }
 }
 
+/* Estilos para el scrollbar (solo en navegadores WebKit como Chrome) */
+
+/* Toda la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento vertical */
+    height: 12px; /* Altura de la barra de desplazamiento horizontal */
+}
+
+/* La pista (el fondo) de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+    background: transparent; /* ¡Esto hace que el fondo de la barra sea transparente! */
+    border-radius: 10px;
+}
+
+/* El "pulgar" o la pieza que se mueve */
+::-webkit-scrollbar-thumb {
+    background-color: var(--vinotinto-claro); /* Color del pulgar */
+    border-radius: 10px; /* Bordes redondeados para el pulgar */
+    /* border: 2px solid var(--beige); */ /* COMENTADO: Elimina este borde para que el pulgar parezca flotar sobre el contenido transparente. */
+}
+
+/* Estado al pasar el mouse sobre el pulgar */
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--vinotinto); /* Color más oscuro al pasar el mouse */
+}
+
+/* Para navegadores Firefox (método más reciente y estándar, pero limitado) */
+/* Si quisieras que el scrollbar de un elemento específico se viera diferente en Firefox */
+/* Por ejemplo, para el body: */
+/*
+body {
+    scrollbar-width: thin;          / * 'auto' | 'thin' | 'none' * /
+    scrollbar-color: var(--vinotinto-claro) var(--beige);  / * thumb color track color * /
+}
+*/
+
+/* Para un elemento específico con scroll (ejemplo: .about-us-content si tuviera scroll) */
+/*
+.about-us-content {
+    overflow-y: auto; / * Asegúrate de que el elemento tenga scroll * /
+    scrollbar-width: thin;
+    scrollbar-color: var(--vinotinto-claro) var(--beige);
+}
+*/
+
 
 
 
