@@ -1740,6 +1740,7 @@ main, .carousel, .main-cards, .donation-hero, .donation-hero-buttons {
 
 .about-us-container {
     position: relative;
+    top: -50px ;
     z-index: 2;
     max-width: 1500px;
     margin: 0 auto;
@@ -1775,6 +1776,7 @@ main, .carousel, .main-cards, .donation-hero, .donation-hero-buttons {
     position: relative;
     overflow: hidden;
     max-width: 1200px;
+    height: 500px;
     margin: 0 auto;
     padding: 0px 30px;
     background-color: white;
@@ -1789,7 +1791,7 @@ main, .carousel, .main-cards, .donation-hero, .donation-hero-buttons {
 .carousel-inner {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 100%;
+    width: 120%;
     height: auto;
 }
 
@@ -1799,15 +1801,15 @@ main, .carousel, .main-cards, .donation-hero, .donation-hero-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+    padding: 10px;
     min-height: 350px;
 }
 
 /* Estilos para la diapositiva sin imagen */
 .carousel-slide.full-width-text-slide .about-us-text {
     flex: 1 20 100%;
-    padding-right: 80px;
-    padding-left: 0;
+    padding-right: 150px;
+    padding-left: 0px;
     text-align: left;
     width: 100%;
 }
@@ -1819,7 +1821,8 @@ main, .carousel, .main-cards, .donation-hero, .donation-hero-buttons {
 
 .about-us-text {
     flex: 2 1 0;
-    padding-right: 0px;
+    padding-right: 50px;
+    color: #000000;
 }
 
 .about-us-image {
@@ -1827,9 +1830,48 @@ main, .carousel, .main-cards, .donation-hero, .donation-hero-buttons {
     max-width: 275px;
 }
 
+/* Estilos para los h3 dentro del texto de las diapositivas del carrusel */
+.carousel-slide .about-us-text h3 {
+    background-color: var(--vinotinto); /* Fondo color vinotinto */
+    color: var(--beige); /* Color de texto que contraste bien */
+    padding: 8px 15px; /* Relleno interno para el fondo */
+    border-radius: 8px; /* Bordes redondeados */
+    display: inline-block; /* Hace que el fondo se ajuste al texto */
+    margin-bottom: 0px; /* Espacio debajo del título */
+    text-align: left; /* Alineación por defecto del h3 */
+    line-height: 1.2; /* Ajusta la altura de línea si es necesario */
+}
+
+/* NUEVA REGLA: Estilos para los párrafos dentro del texto del carrusel */
+.carousel-slide .about-us-text p {
+    background-color: rgba(246, 198, 103, 0.2); /* Amarillo mostaza (var(--dorado)) con 20% de opacidad */
+    padding: 0px 12px; /* Pequeño relleno para que el fondo no esté pegado al texto */
+    border-radius: 5px; /* Ligeros bordes redondeados */
+    margin-bottom: 0px; /* Espacio entre párrafos con fondo */
+    line-height: 1.6; /* Mejora la legibilidad si el texto es largo */
+}
+
+/* NUEVA REGLA: Estilos para los elementos de lista (li) dentro del texto del carrusel */
+
+
+/* Opcional: Si quieres que el h2 de "¿POR QUÉ EXISTIMOS?" NO tenga fondo,
+   y si el estilo se hubiera aplicado globalmente, asegúrate de que no tenga uno.
+   Sin embargo, según tu CSS actual, esto no debería ser un problema. */
+.carousel-slide.why-we-exist-slide .about-us-text h2 {
+    /* Si tenías estilos de fondo aquí, elimínalos o redefínelos */
+    background-color: transparent; /* Asegura que no tenga fondo */
+    color: inherit; /* Hereda el color del texto principal o definido en .about-us-text */
+    padding: 0;
+    border-radius: 0;
+    display: block;
+    width: auto;
+    margin: 0 auto 20px auto; /* Ajusta los márgenes si es necesario */
+    text-align: left; /* Alineación por defecto del h2 */
+}
+
 .carousel-control {
     position: absolute;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
     background-color: var(--vinotinto);
     color: var(--beige);

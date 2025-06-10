@@ -28,4 +28,69 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // js/carousel.js (ejemplo, puede que tengas ya algo similar)
+document.addEventListener('DOMContentLoaded', () => {
+    // Asegúrate de que estos selectores sigan siendo correctos para las diapositivas
+    const carouselInner = document.querySelector('.about-us-content .carousel-inner');
+    const slides = document.querySelectorAll('.about-us-content .carousel-slide');
+
+    // CORRECCIÓN: Actualiza los selectores para los botones y los indicadores
+    // Ahora están directamente bajo .about-us-container
+    const prevBtn = document.querySelector('.about-us-container .carousel-control.prev');
+    const nextBtn = document.querySelector('.about-us-container .carousel-control.next');
+    const indicatorsContainer = document.querySelector('.about-us-container .carousel-indicators');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
+        updateIndicators(index);
+        carouselInner.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    function updateIndicators(index) {
+        indicatorsContainer.querySelectorAll('.indicator').forEach((indicator, i) => {
+            indicator.classList.remove('active');
+            if (i === index) {
+                indicator.classList.add('active');
+            }
+        });
+    }
+
+    // Asegúrate de que los botones existan antes de añadir el event listener
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+            showSlide(currentIndex);
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+            showSlide(currentIndex);
+        });
+    }
+
+    // Inicializar el carrusel en la primera slide
+    // Asegúrate de que haya diapositivas antes de intentar mostrarlas
+    if (slides.length > 0) {
+        showSlide(currentIndex);
+    }
+
+
+    // Opcional: Agregar funcionalidad a los indicadores
+    if (indicatorsContainer) {
+        indicatorsContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('indicator')) {
+                const index = Array.from(indicatorsContainer.children).indexOf(e.target);
+                currentIndex = index;
+                showSlide(currentIndex);
+            }
+        });
+    }
+});
 

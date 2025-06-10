@@ -76,7 +76,7 @@
                     <div class="carousel-slide full-width-text-slide">
                         <div class="about-us-text">
                             <h3>NUESTRA MISIÓN</h3>
-                            <p>El Banco Arquidiocesano de Alimentos de Barranquilla desarrolla un trabajo solidario articulado con entidades público-privadas, academia y voluntarios, en la lucha contra el hambre y el cero desperdicio de alimentos, gestionando bienes y servicios donados o comprados, para dirigirlos responsablemente a nuestras comunidades más vulnerables a través de las entidades sin ánimo de lucro vinculadas al programa, fortaleciendo sus capacidades organizativas y realizando un acompañamiento integral para mejorar las condiciones de vida de las personas beneficiarias, en un sentido de corresponsabilidad como valor social, promoviendo y desarrollando la caridad de la iglesia católica.</p>
+                            <p>El Banco Arquidiocesano de Alimentos de Barranquilla, con el apoyo de aliados y voluntarios, combate el hambre y el desperdicio. Gestionamos y distribuimos alimentos a comunidades vulnerables a través de entidades sin ánimo de lucro, buscando mejorar sus vidas y promover la caridad y corresponsabilidad social.</p>
 
                             <h3>NUESTRA VISIÓN</h3>
                             <p>Para el 2025, constituirnos como el programa líder en Barranquilla y su área de influencia, por el desarrollo de acciones para contribuir a la mejora de las condiciones de inseguridad alimentaria y nutricional de las comunidades más vulnerables, con un enfoque de bienestar social integral, prevaleciendo los principios de la caridad y responsabilidad, con un talento humano comprometido con los retos y desafíos de los Bancos de Alimentos, que garanticen su sostenibilidad y desarrollo eficiente.</p>
@@ -93,15 +93,46 @@
                         </div>
                         <!-- SE HA ELIMINADO EL DIV DE LA IMAGEN DE AQUÍ -->
                     </div>
-                </div>
-                <!-- Asegúrate de tener los controles y los indicadores también si los necesitas -->
-                <button class="carousel-control prev">&#10094;</button>
-                <button class="carousel-control next">&#10095;</button>
 
-                <div class="carousel-indicators">
-                    <span class="indicator active"></span>
-                    <span class="indicator"></span>
+                    <!-- NUEVA Slide 3: Contenido "¿POR QUÉ EXISTIMOS?" Simplificado y ODS -->
+                    <div class="carousel-slide why-we-exist-slide">
+                        <div class="about-us-text">
+                            <h3>¿POR QUÉ EXISTIMOS?</h3>
+                            <p style="margin-top: 0;"><em>Alimentar es un acto de justicia, fe y humanidad.</em></p>
+                            <p>Según el Programa Mundial de Alimentos (WFP) de la ONU, millones de personas enfrentan inseguridad alimentaria aguda a nivel global. En Colombia, la pobreza y el desperdicio de más de 9 millones de toneladas de alimentos al año exacerban esta crisis.</p>
+                            <p style="margin-bottom: 0;">Existimos porque creemos que alimentar es dignificar la vida. Trabajamos por una Barranquilla sin hambre ni desperdicio, donde cada persona acceda a alimentos dignos y construya comunidad.</p>
+
+                            <!-- Contenedor para la sección de ODS para mejor control de espaciado y tamaño -->
+                            <div style="margin-top: 20px;">
+                                <h3 style="margin-top: 0; margin-bottom: 10px;">ALINEACIÓN CON LOS ODS</h3>
+                                <p style="margin-top: 0; margin-bottom: 15px;">Nuestro trabajo contribuye directamente al cumplimiento de los Objetivos de Desarrollo Sostenible establecidos por la ONU, especialmente:</p>
+                                <!-- NUEVO CONTENEDOR FLEX PARA LAS DOS IMÁGENES Y TEXTOS DE ODS -->
+                                <div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+                                    <div style="display: flex; align-items: flex-start; margin-bottom: 10px; flex: 1 1 45%;">
+                                        <img src="../img/ods2.jpg" alt="ODS 2 Hambre Cero" style="width: 115px; height: auto; margin-right: 10px;">
+                                        <p style="margin: 0; font-size: 0.95em;"><strong>ODS 2: Hambre Cero</strong> - Combatimos la inseguridad alimentaria promoviendo el acceso digno y equitativo a alimentos nutritivos.</p>
+                                    </div>
+                                    <div style="display: flex; align-items: flex-start; flex: 1 1 45%;">
+                                        <img src="../img/ods 12.jpg" alt="ODS 12 Producción y Consumo Responsables" style="width: 115px; height: auto; margin-right: 10px;">
+                                        <p style="margin: 0; font-size: 0.95em;"><strong>ODS 12: Producción y Consumo Responsables</strong> - Rescatamos alimentos en riesgo de desperdicio para redistribuirlos entre quienes más lo necesitan.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SIN IMAGEN PARA ESTA SLIDE -->
+                    </div>
+
                 </div>
+            </div>
+            <!-- Controles del Carrusel (AHORA FUERA de about-us-content, pero DENTRO de about-us-container) -->
+            <button class="carousel-control prev">&#10094;</button>
+            <button class="carousel-control next">&#10095;</button>
+
+            <!-- Indicadores del Carrusel (AHORA FUERA de about-us-content, pero DENTRO de about-us-container) -->
+            <div class="carousel-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span> <!-- Nuevo indicador para la tercera slide -->
             </div>
         </div>
     </section>
