@@ -25,6 +25,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     fadeUpElements.forEach(element => observer.observe(element));
+
+    // Funcionalidad del Acordeón para Preguntas Frecuentes
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const accordionItem = header.parentElement;
+            const accordionContent = header.nextElementSibling; // El contenido es el siguiente hermano
+
+            // Cierra todos los acordeones abiertos excepto el actual
+            accordionHeaders.forEach(otherHeader => {
+                const otherItem = otherHeader.parentElement;
+                const otherContent = otherHeader.nextElementSibling;
+                if (otherItem !== accordionItem && otherHeader.classList.contains('active')) {
+                    otherHeader.classList.remove('active');
+                    otherContent.classList.remove('active');
+                    otherContent.style.maxHeight = null; // Cierra el contenido
+                }
+            });
+
+            // Alterna la clase 'active' para el encabezado y el contenido del acordeón actual
+            header.classList.toggle('active');
+            accordionContent.classList.toggle('active');
+
+            // Ajusta la altura máxima para el contenido
+            if (accordionContent.classList.contains('active')) {
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px'; // Expande al tamaño del contenido
+            } else {
+                accordionContent.style.maxHeight = null; // Contrae
+            }
+        });
+    });
 });
 
 // js/carousel.js (ejemplo, puede que tengas ya algo similar)
