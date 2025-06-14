@@ -126,3 +126,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Función para animar números
+function animateNumbers() {
+    const statsNumbers = document.querySelectorAll('.stat-number');
+    
+    statsNumbers.forEach(statNumber => {
+        const target = parseInt(statNumber.textContent.replace(/[^0-9]/g, ''));
+        let current = 0;
+        const duration = 2000; // 2 segundos
+        const increment = target / (duration / 16); // 60fps
+        
+        const updateNumber = () => {
+            current += increment;
+            if (current < target) {
+                statNumber.textContent = Math.floor(current).toLocaleString();
+                requestAnimationFrame(updateNumber);
+            } else {
+                statNumber.textContent = target.toLocaleString();
+            }
+        };
+        
+        updateNumber();
+    });
+}
+
+// Observador de intersección para activar la animación cuando el elemento sea visible
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateNumbers();
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+// Observar el banner de estadísticas
+document.addEventListener('DOMContentLoaded', () => {
+    const statsBanner = document.querySelector('.stats-banner');
+    if (statsBanner) {
+        observer.observe(statsBanner);
+    }
+});
+

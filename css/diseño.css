@@ -659,33 +659,293 @@ section h2 {
 .stat-item {
     text-align: left;
     padding: 25px;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: transparent;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(57, 137, 101, 0.1);
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    backdrop-filter: blur(5px);
 }
 
 .stat-item:hover {
     transform: translateY(-5px);
-    background-color: white;
 }
 
 .stat-number {
-    color: #ef8639;
-    font-size: 2.8em;
+    color: var(--vinotinto);
+    font-size: 0em; /* Manteniendo el tamaño que habíamos puesto */
     font-weight: bold;
-    margin-bottom: 10px;
-    line-height: 1;
+    display: block; /* O display: inline-block; si lo prefieres, pero asegúrate de que sólo haya uno */
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative; /* CRUCIAL: El padre debe ser 'relative' para que 'absolute' de ::before funcione */
+}
+
+.stats-banner .stat-number::before {
+    content: '+'; /* El signo más que siempre estará visible */
+    position: absolute;
+    /* Ajusta estos valores para posicionar el '+' */
+    left: -0.6em; /* Mueve el '+' ligeramente a la izquierda del inicio del número */
+    top: 0.1em; /* Mueve el '+' ligeramente hacia arriba */
+    font-size: 0.9em; /* Haz el '+' más pequeño, por ejemplo, 30% del tamaño del número */
+    color: var(--vinotinto); /* Puedes mantener el mismo color o cambiarlo */
+    font-weight: 1em; /* Para que el '+' no sea tan grueso como el número */
+    z-index: 3; /* Asegura que esté por encima de cualquier otro elemento */
 }
 
 .stat-label {
-    color: #398965;
+    color: #f1efb5;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.stats-banner .separator {
+    width: 2px;
+    height: 60px;
+    background-color: var(--beige);
+    margin: 0 10px;
+}
+
+.stats-banner .map-shape {
+    /* Eliminamos las propiedades de posicionamiento absoluto para que se comporte como un elemento flex */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    
+    /* Le damos un tamaño específico para que se vea al lado de los números */
+    width: 150px; /* Ajusta el ancho según lo necesites */
+    height: 150px; /* Ajusta la altura según lo necesites */
+    
+    background-image: url('../img/banco.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0; /* Hacemos que sea completamente visible */
+    z-index: 2; /* Aseguramos que esté sobre el fondo de la sección */
+    
+    /* Agregamos margen para separarlo de los números si es necesario */
+    margin-left: 30px; /* Espacio a la izquierda para separarlo de la última estadística */
+}
+
+.volunteering-info-card {
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco semitransparente */
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    padding: 40px;
+    color: var(--gris-texto); /* Color de texto principal dentro de la tarjeta */
+    text-align: left;
+    margin-top: 40px;
+}
+
+.volunteering-info-card h3 {
+    color: var(--vinotinto); /* Título de la tarjeta */
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-align: center;
+    background: none;
+    padding: 0;
+}
+
+.volunteering-info-card .subtitle-description {
+    font-style: italic;
     font-size: 1.1em;
-    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--gris-texto);
+}
+
+.volunteering-types {
+    margin-bottom: 40px;
+}
+
+.volunteering-types h4, .faq-section h4 {
+    color: var(--vinotinto);
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--dorado);
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.volunteering-types ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.volunteering-types li {
+    background-color: var(--beige);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1em;
+    color: var(--gris-texto);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.volunteering-types li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.volunteering-types li i {
+    color: var(--vinotinto);
+    font-size: 1.3em;
+}
+
+/* Estilos para el acordeón de Preguntas Frecuentes */
+.accordion-container {
+    border: 1px solid var(--vinotinto-claro);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--vinotinto-claro);
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    background-color: var(--vinotinto); /* Fondo vinotinto */
+    color: var(--beige); /* Texto beige */
+    padding: 15px 20px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: var(--vinotinto-oscuro); /* Vinotinto más oscuro al pasar el mouse */
+}
+
+.accordion-header .fa-chevron-down {
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    background-color: var(--beige); /* Fondo beige para el contenido */
+    color: var(--gris-texto);
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.accordion-content.active {
+    max-height: 200px; /* Altura máxima arbitraria, ajustar si el contenido es más largo */
+    padding: 15px 20px;
+}
+
+.accordion-content p {
+    margin: 0 0 10px 0;
+    line-height: 1.6;
+}
+
+/* Botón "QUIERO PARTICIPAR" */
+.btn-participate {
+    background-color: var(--vinotinto);
+    color: var(--beige);
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 40px;
+    display: inline-flex; /* Permite alinear el icono con el texto */
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-participate:hover {
+    background-color: var(--vinotinto-claro);
+    color: var(--dorado);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 992px) {
+    .volunteering-section .section-title {
+        font-size: 2.2em;
+    }
+
+    .stats-banner {
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 20px;
+    }
+
+    .stats-banner .separator {
+        width: 80%;
+        height: 2px;
+    }
+
+    .stats-banner .map-shape {
+        position: static; /* Elimina la posición absoluta en móviles */
+        transform: none;
+        margin-top: 20px;
+    }
+
+    .volunteering-info-card {
+        padding: 30px 20px;
+    }
+
+    .volunteering-types ul {
+        grid-template-columns: 1fr;
+    }
+
+    .accordion-header {
+        font-size: 1em;
+        padding: 12px 15px;
+    }
+
+    .accordion-content {
+        padding: 0 15px;
+    }
+
+    .accordion-content.active {
+        padding: 10px 15px;
+    }
+
+    .btn-participate {
+        font-size: 1.1em;
+        padding: 12px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .volunteering-section {
+        padding: 40px 15px;
+    }
 }
 
 /* Estilos para el formulario de donación */
@@ -2253,60 +2513,67 @@ body {
 
 .stats-banner {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 30px;
-    margin-bottom: 60px;
+    padding: 40px 20px;
     position: relative;
-    padding: 20px 0;
-    /* Mantenemos este fondo para que los números no se vean transparentes */
-    background-color: rgba(255, 255, 255, 0.9); /* Blanco con 90% de opacidad */
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    z-index: 3;
+    background: transparent;
+    margin: 40px auto;
+    max-width: 1200px;
 }
 
 .stats-banner .stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    line-height: 1.1;
-    color: var(--beige); /* Color de texto base para los labels */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    text-align: center;
+    padding: 0 20px;
+    background: transparent;
+    position: relative;
+    z-index: 2;
 }
 
 .stats-banner .stat-number {
-    color: var(--vinotinto); /* CAMBIO: Color de los números a vinotinto */
-    font-size: 3.5em;
+    color: var(--vinotinto);
+    font-size: 6em; /* Manteniendo el tamaño que habíamos puesto */
     font-weight: bold;
+    display: block; /* Para que ocupe su propia línea dentro del .stat-item */
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative; /* Necesario para posicionar el pseudo-elemento '+' */
+    /* Removí 'display: inline-block' si estaba, porque 'block' es más adecuado aquí */
 }
 
+
+
 .stats-banner .stat-label {
-    font-size: 1.2em;
+    color: #f1efb5;
+    font-size: 1.4em;
+    font-weight: bold;
     text-transform: uppercase;
-    font-weight: 500;
+    display: block;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .stats-banner .separator {
-    width: 3px;
-    height: 100px; /* Altura de la línea divisoria */
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 2px;
+    width: 2px;
+    height: 60px;
+    background-color: var(--beige);
+    margin: 0 10px;
 }
 
 .stats-banner .map-shape {
-    position: absolute;
-    right: 20px; /* Ajusta la posición del mapa */
+    position: absolute; /* El mapa se posicionará con respecto al .stats-banner */
     top: 50%;
-    transform: translateY(-50%);
-    width: 120px; /* Ancho del mapa */
-    height: 120px; /* Altura del mapa */
-    /* Asegúrate de que esta sea la ruta de la imagen estática del mapa vinotinto */
-    background-image: url('../img/mapa_atlantico_vinotinto.png'); /* Ruta de tu imagen estática */
-    background-size: contain;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el mapa en el banner */
+    width: 100%; /* Ocupa el 100% del ancho del .stats-banner */
+    height: 100%; /* Ocupa el 100% de la altura del .stats-banner */
+    background-image: url('../img/mapa_atlantico_vinotinto.png'); /* ASEGÚRATE DE QUE ESTA RUTA ES CORRECTA */
+    background-size: contain; /* Ajusta la imagen para que quepa completamente */
+    background-position: center;
     background-repeat: no-repeat;
-    opacity: 1; /* Asegura que la imagen sea completamente visible */
-    /* Ya no necesitas filtros si la imagen ya es vinotinto */
+    opacity: 0.15; /* Opacidad baja para que sea un fondo sutil */
+    z-index: 1; /* Asegura que esté detrás de los números y separadores */
+    /* Eliminamos cualquier margin-left que pudiera haber para posicionamiento flex */
 }
 
 .volunteering-info-card {
@@ -2527,8 +2794,228 @@ body {
     }
 }
 
+.transparency-section {
+    position: relative; /* Necesario para el pseudo-elemento overlay */
+    background-image: url('../img/b4.jpg'); /* Puedes cambiar 'b4.jpg' por la ruta de tu imagen deseada */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 30px; /* Reducido de 80px a 50px para reducir el espacio vertical */
+    text-align: center;
+    z-index: 0; /* Asegura que la sección y su imagen de fondo sean la capa base */
+}
 
+/* Capa semitransparente de color verde sobre la imagen de fondo */
+.transparency-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(62, 103, 0, 0.8); /* var(--verde-acento) con 80% de opacidad */
+    z-index: 1; /* El overlay debe estar sobre la imagen pero debajo del contenido */
+}
 
+.transparency-container,
+.transparency-section .section-title,
+.transparency-reports-grid,
+.transparency-figures-grid,
+.downloadable-text,
+.report-card, /* Aseguramos que las tarjetas estén sobre el overlay */
+.figure-card /* Aseguramos que las tarjetas estén sobre el overlay */
+ {
+    position: relative; /* Asegura que todos los elementos de contenido estén sobre el overlay */
+    z-index: 2;
+}
+
+.transparency-container {
+    max-width: 1000px; /* Corregido de '1000+px' a '1000px' */
+    margin: 0 auto;
+}
+
+.transparency-section .section-title {
+    color: var(--beige); /* Título en beige para contraste */
+    font-size: 2.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    background: none; /* Asegura que no tenga fondo heredado */
+    padding: 0;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.transparency-section .section-title.figures-title {
+    margin-top: 20px ; /* Espacio extra entre las dos subsecciones */
+}
+
+.transparency-reports-grid {
+    display: flex; /* Usamos flex para una fila con un elemento en el medio */
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en pantallas pequeñas */
+}
+
+.report-card {
+    background-color: rgba(255, 255, 255, 0.95); /* Blanco semitransparente */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 180px; /* Ancho fijo para las tarjetas de informe */
+    height: 160px; /* Altura fija */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    color: var(--vinotinto); /* Color base para el texto del informe */
+    font-weight: bold;
+}
+
+.report-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.report-card i {
+    font-size: 3em; /* Tamaño grande para los iconos */
+    color: var(--vinotinto); /* Color vinotinto para los iconos */
+    margin-bottom: 10px;
+}
+
+/* Icono de lupa superpuesto en el informe */
+.report-card .fa-search {
+    position: absolute;
+    font-size: 1.5em; /* Tamaño más pequeño para la lupa */
+    top: 50%; /* Posiciona la lupa en el centro vertical */
+    left: 50%; /* Posiciona la lupa en el centro horizontal */
+    transform: translate(-50%, -50%); /* Ajusta para centrar la lupa */
+    color: var(--vinotinto-claro); /* Color más claro para la lupa */
+    opacity: 0.8;
+}
+
+.report-card p {
+    font-size: 0.95em;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.downloadable-text {
+    color: var(--beige);
+    font-size: 0.9em;
+    font-style: italic;
+    margin: 0 20px; /* Margen para separarlo de las tarjetas */
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+}
+
+.transparency-figures-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 columnas */
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.figure-card {
+    background-color: rgba(255, 255, 255, 0.95); /* Blanco semitransparente */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.figure-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.figure-card i {
+    font-size: 5em; /* Iconos grandes */
+    color: var(--vinotinto); /* Color vinotinto para los iconos */
+    margin-bottom: 20px;
+}
+
+.figure-card h3 {
+    color: var(--vinotinto); /* Color vinotinto para el texto de las cifras */
+    font-size: 1.6em;
+    font-weight: bold;
+    line-height: 1.3;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 992px) {
+    .transparency-section .section-title {
+        font-size: 2.2em;
+    }
+
+    .transparency-reports-grid {
+        flex-direction: column; /* Apila las tarjetas de informe en pantallas más pequeñas */
+        gap: 20px;
+    }
+
+    .downloadable-text {
+        margin: 20px 0; /* Ajusta el margen si se apila */
+    }
+
+    .report-card {
+        width: 220px; /* Un poco más anchas cuando están apiladas */
+        height: 180px;
+    }
+
+    .transparency-figures-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta las columnas de cifras */
+    }
+}
+
+@media (max-width: 768px) {
+    .transparency-section {
+        padding: 50px 15px;
+    }
+
+    .transparency-reports-grid {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .report-card {
+        width: 90%; /* Ocupa casi todo el ancho disponible */
+        max-width: 250px;
+        height: auto;
+        padding: 15px;
+    }
+
+    .report-card i {
+        font-size: 2.5em;
+    }
+
+    .report-card .fa-search {
+        font-size: 1.2em;
+    }
+
+    .transparency-figures-grid {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+    }
+
+    .figure-card i {
+        font-size: 4em;
+    }
+
+    .figure-card h3 {
+        font-size: 1.4em;
+    }
+}
 
 
 
