@@ -2848,7 +2848,7 @@ body {
 }
 
 .transparency-section .section-title.figures-title {
-    margin-top: 20px ; /* Espacio extra entre las dos subsecciones */
+    margin-top: 0px ; /* Espacio extra entre las dos subsecciones */
 }
 
 .transparency-reports-grid {
@@ -3014,6 +3014,359 @@ body {
 
     .figure-card h3 {
         font-size: 1.4em;
+    }
+}
+
+.aliados-donantes-section {
+    background: 
+        linear-gradient(rgba(107,24,27,0.92), rgba(107,24,27,0.92)),
+        url('../img/banco.jpg') center center/cover no-repeat;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.aliados-donantes-card {
+    background: rgba(255,255,255,0.85); /* Blanco semitransparente */
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aliados-donantes-card h2 {
+    color: var(--vinotinto);
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    background: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.aliados-donantes-container {
+    overflow: hidden;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.aliados-donantes-slider {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: max-content;
+    animation: aliados-scroll 40s linear infinite;
+}
+
+.aliado-logo {
+    flex: 0 0 auto;
+    width: 170px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    margin: 0 18px;
+    transition: transform 0.2s;
+}
+
+.aliado-logo img {
+    max-width: 150px;
+    max-height: 100px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s, transform 0.3s;
+}
+
+.aliado-logo:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.12);
+}
+
+@keyframes aliados-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.aliados-donantes-container:hover .aliados-donantes-slider {
+    animation-play-state: paused;
+}
+
+@media (max-width: 600px) {
+    .aliados-donantes-card {
+        padding: 20px 5px 15px 5px;
+    }
+    .aliados-donantes-slider {
+        gap: 10px;
+    }
+    .aliado-logo {
+        width: 90px;
+        height: 60px;
+    }
+    .aliado-logo img {
+        max-width: 70px;
+        max-height: 40px;
+    }
+}
+
+.aliados-agradecimiento {
+    background: rgba(255,255,255,0.97);
+    color: var(--vinotinto);
+    max-width: 95%;
+    margin: 32px auto 0 auto;
+    padding: 24px 32px 18px 32px;
+    border-radius: 6px;
+    font-size: 1.15em;
+    font-style: italic;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    text-align: center;
+    font-weight: 500;
+}
+
+.aliados-agradecimiento p {
+    margin: 0;
+    color: var(--vinotinto);
+    font-style: italic;
+    font-size: 1.08em;
+    font-weight: 500;
+}
+
+.aliados-mencion {
+    background: #F6C667;
+    color: #3D0D0F;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 18px 10px 18px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25em;
+    font-weight: bold;
+    gap: 18px;
+    border-radius: 0 0 8px 8px;
+    border-top: 2px solid #e2b14c;
+}
+
+.aliados-mencion-icon {
+    font-size: 2em;
+    margin-right: 10px;
+    color: #3D0D0F;
+}
+
+.aliados-mencion-text {
+    color: #3D0D0F;
+    font-size: 1.1em;
+    font-style: italic;
+}
+
+@media (max-width: 700px) {
+    .aliados-agradecimiento {
+        padding: 12px 5px 10px 5px;
+        font-size: 1em;
+    }
+    .aliados-mencion {
+        font-size: 1em;
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px 5px;
+    }
+    .aliados-mencion-icon {
+        font-size: 1.5em;
+    }
+}
+
+.sumate-section {
+    background: linear-gradient(rgba(246, 198, 103, 0.67), rgba(246, 198, 103, 0.758)), url('../img/camion.jpeg') center center/cover no-repeat;
+    padding: 40px 0 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.sumate-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    max-width: 900px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 40px;
+    gap: 30px;
+}
+
+.sumate-info {
+    flex: 2;
+    text-align: left;
+}
+
+.sumate-info h3 {
+    color: var(--vinotinto);
+    font-size: 1.15em;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.sumate-info p {
+    color: var(--vinotinto);
+    font-size: 1em;
+    margin: 0;
+}
+
+.sumate-icon-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    min-width: 180px;
+}
+
+.sumate-icon-btn i {
+    font-size: 3.5em;
+    color: var(--vinotinto);
+    margin-bottom: 10px;
+}
+
+.sumate-btn {
+    background: var(--vinotinto);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.15em;
+    border: none;
+    border-radius: 16px;
+    padding: 12px 38px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(107,24,27,0.08);
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.sumate-btn:hover {
+    background: var(--vinotinto-claro);
+    color: var(--dorado);
+}
+
+@media (max-width: 800px) {
+    .sumate-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 12px;
+        gap: 18px;
+    }
+    .sumate-icon-btn {
+        flex-direction: row;
+        min-width: unset;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 18px;
+    }
+    .sumate-icon-btn i {
+        font-size: 2.2em;
+        margin-bottom: 0;
+    }
+    .sumate-btn {
+        font-size: 1em;
+        padding: 10px 24px;
+        margin-top: 0;
+    }
+}
+
+.footer-baq {
+    background: #6B181B;
+    color: #fff;
+    padding: 28px 0 14px 0; /* Menos espacio arriba y abajo */
+    font-size: 1em;         /* Más pequeño */
+}
+
+.footer-baq-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 32px;              /* Menos espacio entre columnas */
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-baq-col {
+    flex: 1 1 220px;        /* Columnas más angostas */
+    min-width: 160px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-baq-col h3 {
+    font-size: 1.08em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.footer-baq-col p, .footer-baq-col ul, .footer-baq-col li {
+    text-align: left;
+    font-size: 0.98em;
+    line-height: 1.5;
+}
+
+.footer-baq-col ul {
+    margin: 4px 0 0 18px;
+    padding: 0;
+    list-style: disc;
+}
+
+.footer-baq-col li {
+    margin-bottom: 2px;
+}
+
+.footer-baq-col a {
+    color: #F6C667;
+    text-decoration: underline;
+    word-break: break-all;
+    font-size: 0.98em;
+}
+
+.footer-baq-col a:hover {
+    color: #fff;
+}
+
+.footer-baq-red {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+.footer-baq-red i {
+    font-size: 1.2em;
+    color: #F6C667;
+}
+
+@media (max-width: 900px) {
+    .footer-baq-container {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+    .footer-baq-col {
+        min-width: unset;
+        width: 100%;
     }
 }
 
