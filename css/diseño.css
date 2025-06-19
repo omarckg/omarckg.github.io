@@ -3370,6 +3370,47 @@ body {
     }
 }
 
+.contacto-mapa-solo {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacto-mapa-solo h2 {
+    color: var(--vinotinto);
+    font-size: 2em;
+    margin-bottom: 18px;
+    text-align: center;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    font-weight: bold;
+}
+
+.contacto-mapa-solo iframe {
+    width: 98vw;
+    max-width: 1800px;
+    min-width: 320px;
+    height: 500px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    border: none;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1300px) {
+    .contacto-mapa-solo {
+        max-width: 98vw;
+    }
+    .contacto-mapa-solo iframe {
+        height: 320px;
+    }
+}
+
 
 
 
