@@ -1353,6 +1353,7 @@ section h2 {
 
 .contacto-container {
     max-width: 1200px;
+    margin-top: 0px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
