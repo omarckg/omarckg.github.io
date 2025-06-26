@@ -1,0 +1,261 @@
+/* Variables de colores */
+:root {
+    --vinotinto: #6B181B;
+    --vinotinto-claro: #A02A2F;
+    --vinotinto-oscuro: #3D0D0F;
+    --dorado: #F6C667;
+    --beige: #FFFDF5;
+    --Negro: #000000;
+    --verde-acento: #3e6700;
+    --gris-texto: #333;
+}
+
+.about-us-section {
+    background-image: url('../img/Fotos_banco/21.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 55px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.about-us-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--verde-acento);
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.about-us-container {
+    position: relative;
+    top: -50px ;
+    z-index: 2;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-us-section h2 {
+    color: var(--beige);
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+    padding: 0  ;
+    border-radius: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.about-us-section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: none;
+    padding: 0px 50px;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.about-us-content {
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 0px 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 120%;
+    height: auto;
+}
+
+.carousel-slide {
+    flex: 0 0 101%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    min-height: 350px;
+}
+
+/* Estilos para la diapositiva sin imagen */
+.carousel-slide.full-width-text-slide .about-us-text {
+    flex: 1 20 100%;
+    padding-right: 150px;
+    padding-left: 0px;
+    text-align: left;
+    width: 100%;
+}
+
+/* Puedes añadir ajustes específicos para el contenedor de texto en esta diapositiva si es necesario */
+.carousel-slide.full-width-text-slide {
+    padding: 0px;
+}
+
+.about-us-text {
+    flex: 2 1 0;
+    padding-right: 50px;
+    color: #000000;
+}
+
+.about-us-image {
+    flex: 1 1 0;
+    max-width: 275px;
+}
+
+/* Estilos para los h3 dentro del texto de las diapositivas del carrusel */
+.carousel-slide .about-us-text h3 {
+    background-color: var(--vinotinto); /* Fondo color vinotinto */
+    color: var(--beige); /* Color de texto que contraste bien */
+    padding: 8px 15px; /* Relleno interno para el fondo */
+    border-radius: 8px; /* Bordes redondeados */
+    display: inline-block; /* Hace que el fondo se ajuste al texto */
+    margin-bottom: 0px; /* Espacio debajo del título */
+    text-align: left; /* Alineación por defecto del h3 */
+    line-height: 1.2; /* Ajusta la altura de línea si es necesario */
+}
+
+/* NUEVA REGLA: Estilos para los párrafos dentro del texto del carrusel */
+.carousel-slide .about-us-text p {
+    background-color: rgba(246, 198, 103, 0.2); /* Amarillo mostaza (var(--dorado)) con 20% de opacidad */
+    padding: 0px 12px; /* Pequeño relleno para que el fondo no esté pegado al texto */
+    border-radius: 5px; /* Ligeros bordes redondeados */
+    margin-bottom: 0px; /* Espacio entre párrafos con fondo */
+    line-height: 1.6; /* Mejora la legibilidad si el texto es largo */
+}
+
+/* Opcional: Si quieres que el h2 de "¿POR QUÉ EXISTIMOS?" NO tenga fondo,
+   y si el estilo se hubiera aplicado globalmente, asegúrate de que no tenga uno.
+   Sin embargo, según tu CSS actual, esto no debería ser un problema. */
+.carousel-slide.why-we-exist-slide .about-us-text h2 {
+    /* Si tenías estilos de fondo aquí, elimínalos o redefínelos */
+    background-color: transparent; /* Asegura que no tenga fondo */
+    color: inherit; /* Hereda el color del texto principal o definido en .about-us-text */
+    padding: 0;
+    border-radius: 0;
+    display: block;
+    width: auto;
+    margin: 0 auto 20px auto; /* Ajusta los márgenes si es necesario */
+    text-align: left; /* Alineación por defecto del h2 */
+}
+
+.carousel-control {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    background-color: var(--vinotinto);
+    color: var(--beige);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5em;
+    z-index: 3;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.carousel-control:hover {
+    background-color: var(--vinotinto-claro);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 3;
+}
+
+.carousel-indicators .indicator {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-indicators .indicator.active {
+    background-color: var(--vinotinto);
+    transform: scale(1.2);
+}
+
+.carousel-indicators .indicator:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 992px) {
+    .about-us-content {
+        flex-direction: column;
+        max-width: 90%;
+        gap: 20px;
+    }
+
+    .carousel-slide {
+        flex-direction: column;
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .about-us-text {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .about-us-image {
+        max-width: 200px;
+        height: auto;
+    }
+
+    .carousel-control {
+        padding: 8px 12px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-us-section {
+        padding: 30px 15px;
+    }
+
+    .about-us-content {
+        padding: 15px;
+    }
+
+    .carousel-control {
+        padding: 6px 10px;
+        font-size: 1em;
+    }
+} 

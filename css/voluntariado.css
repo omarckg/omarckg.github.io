@@ -1,0 +1,340 @@
+/* Sección COMUNIDAD Y VOLUNTARIADO */
+.volunteering-section {
+    position: relative;
+    background-image: url('../img/Fotos_banco/23.png'); /* Reemplaza con tu imagen de fondo */
+    background-size: cover;
+    background-position: center 30%; /* Ajusta si es necesario para centrar la imagen */
+    background-repeat: no-repeat;
+    padding: 60px 20px;
+    text-align: center;
+    overflow: hidden;
+    color: var(--beige); /* Color de texto base para esta sección */
+    z-index: 0;
+}
+
+.volunteering-bg {
+    /* No es necesario si la imagen va directamente en la sección */
+}
+
+.volunteering-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(239, 134, 57, 0.7); /* Naranja del botón de donar con 70% de opacidad */
+    z-index: 1;
+}
+
+.volunteering-content-wrapper {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté sobre el overlay */
+    max-width: 1000px; /* Ancho similar al container de 'qué hacemos' */
+    margin: 0 auto;
+}
+
+.volunteering-section .section-title {
+    color: var(--beige);
+    font-size: 2.8em;
+    font-weight: bold;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    background: none;
+    padding: 0;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stats-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    position: relative;
+    background: transparent;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+.stats-banner .stat-item {
+    text-align: center;
+    padding: 0 20px;
+    background: transparent;
+    position: relative;
+    z-index: 2;
+}
+
+.stats-banner .stat-number {
+    color: var(--vinotinto);
+    font-size: 6em; /* Manteniendo el tamaño que habíamos puesto */
+    font-weight: bold;
+    display: block; /* Para que ocupe su propia línea dentro del .stat-item */
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative; /* Necesario para posicionar el pseudo-elemento '+' */
+    /* Removí 'display: inline-block' si estaba, porque 'block' es más adecuado aquí */
+}
+
+.stats-banner .stat-number::before {
+    content: '+'; /* El signo más que siempre estará visible */
+    position: absolute;
+    /* Ajusta estos valores para posicionar el '+' */
+    left: -0.6em; /* Mueve el '+' ligeramente a la izquierda del inicio del número */
+    top: 0.1em; /* Mueve el '+' ligeramente hacia arriba */
+    font-size: 0.9em; /* Haz el '+' más pequeño, por ejemplo, 30% del tamaño del número */
+    color: var(--vinotinto); /* Puedes mantener el mismo color o cambiarlo */
+    font-weight: 1em; /* Para que el '+' no sea tan grueso como el número */
+    z-index: 3; /* Asegura que esté por encima de cualquier otro elemento */
+}
+
+.stats-banner .stat-label {
+    color: #f1efb5;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.stats-banner .separator {
+    width: 2px;
+    height: 60px;
+    background-color: var(--beige);
+    margin: 0 10px;
+}
+
+.stats-banner .map-shape {
+    position: absolute; /* El mapa se posicionará con respecto al .stats-banner */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el mapa en el banner */
+    width: 100%; /* Ocupa el 100% del ancho del .stats-banner */
+    height: 100%; /* Ocupa el 100% de la altura del .stats-banner */
+    background-image: url('../img/mapa_atlantico_vinotinto.png'); /* ASEGÚRATE DE QUE ESTA RUTA ES CORRECTA */
+    background-size: contain; /* Ajusta la imagen para que quepa completamente */
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15; /* Opacidad baja para que sea un fondo sutil */
+    z-index: 1; /* Asegura que esté detrás de los números y separadores */
+    /* Eliminamos cualquier margin-left que pudiera haber para posicionamiento flex */
+}
+
+.volunteering-info-card {
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco semitransparente */
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    padding: 40px;
+    color: var(--gris-texto); /* Color de texto principal dentro de la tarjeta */
+    text-align: left;
+    margin-top: 40px;
+}
+
+.volunteering-info-card h3 {
+    color: var(--vinotinto); /* Título de la tarjeta */
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-align: center;
+    background: none;
+    padding: 0;
+}
+
+.volunteering-info-card .subtitle-description {
+    font-style: italic;
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--gris-texto);
+}
+
+.volunteering-types {
+    margin-bottom: 40px;
+}
+
+.volunteering-types h4, .faq-section h4 {
+    color: var(--vinotinto);
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--dorado);
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.volunteering-types ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.volunteering-types li {
+    background-color: var(--beige);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1em;
+    color: var(--gris-texto);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.volunteering-types li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.volunteering-types li i {
+    color: var(--vinotinto);
+    font-size: 1.3em;
+}
+
+/* Estilos para el acordeón de Preguntas Frecuentes */
+.accordion-container {
+    border: 1px solid var(--vinotinto-claro);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--vinotinto-claro);
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    background-color: var(--vinotinto); /* Fondo vinotinto */
+    color: var(--beige); /* Texto beige */
+    padding: 15px 20px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: var(--vinotinto-oscuro); /* Vinotinto más oscuro al pasar el mouse */
+}
+
+.accordion-header .fa-chevron-down {
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    background-color: var(--beige); /* Fondo beige para el contenido */
+    color: var(--gris-texto);
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.accordion-content.active {
+    max-height: 200px; /* Altura máxima arbitraria, ajustar si el contenido es más largo */
+    padding: 15px 20px;
+}
+
+.accordion-content p {
+    margin: 0 0 10px 0;
+    line-height: 1.6;
+}
+
+/* Botón "QUIERO PARTICIPAR" */
+.btn-participate {
+    background-color: var(--vinotinto);
+    color: var(--beige);
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 40px;
+    display: inline-flex; /* Permite alinear el icono con el texto */
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-participate:hover {
+    background-color: var(--vinotinto-claro);
+    color: var(--dorado);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 992px) {
+    .volunteering-section .section-title {
+        font-size: 2.2em;
+    }
+
+    .stats-banner {
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 20px;
+    }
+
+    .stats-banner .separator {
+        width: 80%;
+        height: 2px;
+    }
+
+    .stats-banner .map-shape {
+        position: static; /* Elimina la posición absoluta en móviles */
+        transform: none;
+        margin-top: 20px;
+    }
+
+    .volunteering-info-card {
+        padding: 30px 20px;
+    }
+
+    .volunteering-types ul {
+        grid-template-columns: 1fr;
+    }
+
+    .accordion-header {
+        font-size: 1em;
+        padding: 12px 15px;
+    }
+
+    .accordion-content {
+        padding: 0 15px;
+    }
+
+    .accordion-content.active {
+        padding: 10px 15px;
+    }
+
+    .btn-participate {
+        font-size: 1.1em;
+        padding: 12px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .volunteering-section {
+        padding: 40px 15px;
+    }
+} 
