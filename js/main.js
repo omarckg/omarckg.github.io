@@ -168,3 +168,85 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Carrusel de fotos para bienestar comunitario
+document.addEventListener('DOMContentLoaded', function() {
+    const carousels = document.querySelectorAll('.bienestar-carousel');
+    
+    carousels.forEach(carousel => {
+        const carouselInner = carousel.querySelector('.bienestar-carousel-inner');
+        const slides = carousel.querySelectorAll('.bienestar-carousel-slide');
+        const prevBtn = carousel.querySelector('.bienestar-carousel-control.prev');
+        const nextBtn = carousel.querySelector('.bienestar-carousel-control.next');
+        const indicators = carousel.querySelectorAll('.bienestar-carousel-indicator');
+        
+        let currentIndex = 0;
+        let autoPlayInterval;
+
+        function showSlide(index) {
+            // Asegurar que el índice esté dentro del rango
+            if (index < 0) index = slides.length - 1;
+            if (index >= slides.length) index = 0;
+            
+            currentIndex = index;
+            
+            // Mover el carrusel
+            carouselInner.style.transform = `translateX(-${index * 25}%)`;
+            
+            // Actualizar indicadores
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(nextSlide, 5000); // Cambiar cada 5 segundos
+        }
+
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+
+        // Event listeners para controles
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopAutoPlay();
+                startAutoPlay(); // Reiniciar autoplay
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopAutoPlay();
+                startAutoPlay(); // Reiniciar autoplay
+            });
+        }
+
+        // Event listeners para indicadores
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                showSlide(index);
+                stopAutoPlay();
+                startAutoPlay(); // Reiniciar autoplay
+            });
+        });
+
+        // Pausar autoplay al hacer hover
+        carousel.addEventListener('mouseenter', stopAutoPlay);
+        carousel.addEventListener('mouseleave', startAutoPlay);
+
+        // Inicializar
+        showSlide(0);
+        startAutoPlay();
+    });
+});
+
