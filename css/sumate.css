@@ -7,95 +7,135 @@
     gap: 32px;
 }
 
-.sumate-card {
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-    max-width: 900px;
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 32px 40px;
-    gap: 30px;
-}
-
-.sumate-info {
-    flex: 2;
-    text-align: left;
-}
-
-.sumate-info h3 {
-    color: var(--vinotinto);
-    font-size: 1.15em;
-    font-weight: bold;
-    font-style: italic;
-    margin-bottom: 12px;
-}
-
-.sumate-info p {
-    color: var(--vinotinto);
-    font-size: 1em;
-    margin: 0;
-}
-
-.sumate-icon-btn {
-    flex: 1;
+.sumate-card-nuevo {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+    max-width: 1000px;
+    margin: 40px auto 60px auto;
+    padding: 36px 32px 28px 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 18px;
-    min-width: 180px;
+    font-family: inherit;
 }
 
-.sumate-icon-btn i {
-    font-size: 3.5em;
-    color: var(--vinotinto);
+.sumate-titulo {
+    color: #6b181b;
+    background: #ffffff00;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.sumate-icono {
+    font-size: 10em;
+    color: #6b181b;
+    margin-bottom: 18px;
+}
+
+.sumate-pregunta {
+    font-size: 1.15em;
+    color: #6b181b;
+    text-align: center;
     margin-bottom: 10px;
 }
 
-.sumate-btn {
-    background: var(--vinotinto);
+.sumate-descripcion {
+    color: #6b181b;
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 1em;
+}
+
+.sumate-btn-descarga {
+    background: #6b181b;
     color: #fff;
     font-weight: bold;
-    font-size: 1.15em;
-    border: none;
     border-radius: 16px;
-    padding: 12px 38px;
+    padding: 12px 28px;
     text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-    box-shadow: 0 2px 8px rgba(107,24,27,0.08);
+    font-size: 1.05em;
+    margin-bottom: 18px;
     display: inline-block;
+    transition: background 0.2s;
+    text-align: center;
+}
+.sumate-btn-descarga:hover {
+    background: #a02a2d;
+    color: #ffd700;
+}
+
+.sumate-frase {
+    color: #6b181b;
+    text-align: center;
+    font-size: 1.05em;
+    margin-bottom: 10px;
+}
+.sumate-cita {
+    font-style: italic;
+    font-size: 0.98em;
+    display: block;
+    margin-top: 2px;
+}
+
+.sumate-beneficios {
+    color: #6b181b;
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 16px;
+}
+
+.sumate-banner-verde {
+    background: #7bb13c;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px 18px;
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 1em;
+}
+
+.sumate-btn-inscribete {
+    background: #6b181b;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 16px;
+    padding: 13px 44px;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-bottom: 18px;
+    display: inline-block;
+    transition: background 0.2s;
+    text-align: center;
+}
+.sumate-btn-inscribete:hover {
+    background: #a02a2d;
+    color: #ffd700;
+}
+
+.sumate-importante {
+    color: #6b181b;
+    font-size: 0.95em;
     margin-top: 10px;
+    text-align: left;
 }
 
-.sumate-btn:hover {
-    background: var(--vinotinto-claro);
-    color: var(--dorado);
-}
-
-@media (max-width: 800px) {
-    .sumate-card {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 24px 12px;
-        gap: 18px;
+@media (max-width: 700px) {
+    .sumate-card-nuevo {
+        padding: 18px 6vw 18px 6vw;
+        max-width: 98vw;
     }
-    .sumate-icon-btn {
-        flex-direction: row;
-        min-width: unset;
-        width: 100%;
-        justify-content: flex-start;
-        gap: 18px;
+    .sumate-titulo {
+        font-size: 1.3em;
     }
-    .sumate-icon-btn i {
-        font-size: 2.2em;
-        margin-bottom: 0;
+    .sumate-icono {
+        font-size: 2.5em;
     }
-    .sumate-btn {
+    .sumate-btn-inscribete, .sumate-btn-descarga {
         font-size: 1em;
-        padding: 10px 24px;
-        margin-top: 0;
+        padding: 10px 10vw;
     }
 }

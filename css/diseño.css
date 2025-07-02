@@ -5,7 +5,7 @@
     --vinotinto-oscuro: #3D0D0F;
     --dorado: #F6C667;
     --beige: #FFFDF5;
-    --Negro: #000000;
+    --Negro: #00000000;
     --verde-acento: #3e6700;
     --gris-texto: #333;
 }
@@ -97,6 +97,7 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 6rem;
 }
 
 .hero-logos {
@@ -119,7 +120,7 @@ nav a:hover {
     font-size: 3.5rem;
     font-weight: bold;
     color: var(--beige);
-    text-shadow: 2px 2px 8px var(--vinotinto);
+    text-shadow: 2px 2px 8px var(--gris-texto);
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -130,15 +131,15 @@ nav a:hover {
     color: var(--beige);
     font-style: italic;
     margin-bottom: 0.5rem;
-    text-shadow: 1px 1px 6px var(--vinotinto);
+    
 }
 
 .hero-info {
     font-size: 1.1rem;
-    color: var(--vinotinto);
+    color: var(--Negro);
     margin-bottom: 2rem;
     font-weight: 600;
-    background: rgba(255,255,255,0.4);
+    
     display: inline-block;
     padding: 0.3em 1em;
     border-radius: 8px;
@@ -155,7 +156,7 @@ nav a:hover {
     box-shadow: 0 4px 16px rgba(0,0,0,0.15);
     transition: background 0.2s, color 0.2s, transform 0.2s;
     display: inline-block;
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     letter-spacing: 1px;
     border: none;
 }
@@ -1521,7 +1522,7 @@ section h2 {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: var(--dorado);
+    background-color: var(--vinotinto) !important; /* Vinotinto siempre */
     min-width: 200px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     border-radius: 0 0 8px 8px;
@@ -1535,7 +1536,8 @@ section h2 {
 }
 
 .dropdown-content a {
-    color: var(--vinotinto);
+    color: var(--dorado) !important;
+    background: var(--vinotinto) !important;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -1543,8 +1545,8 @@ section h2 {
 }
 
 .dropdown-content a:hover {
-    background-color: var(--vinotinto);
-    color: var(--dorado);
+    background-color: var(--vinotinto-claro) !important;
+    color: #fff !important;
 }
 
 @keyframes fadeIn {
@@ -2117,6 +2119,73 @@ main, .carousel, .main-cards, .donation-hero, .donation-hero-buttons {
     background: #8a1f22;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(107,24,27,0.3);
+}
+
+.hero-como-donar {
+    margin-top: 1rem;
+    text-align: center;
+    color: #fff8dc;
+}
+
+.hero-como-donar h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 1.2em;
+    color: #fff8dc;
+    text-shadow: 1px 1px 6px var(--gris-texto);
+}
+
+.hero-donar-opciones {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.donar-opcion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    font-size: 1.1em;
+    color: #fff8dc;
+    text-shadow: 1px 1px 6px var(--gris-texto);
+}
+
+.donar-opcion i {
+    font-size: 2.8em;
+    margin-bottom: 0.5em;
+    color: #fff8dc;
+    text-shadow: 2px 2px 8px var(--gris-texto);
+}
+
+.donar-opcion div {
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+@media (max-width: 900px) {
+    .hero-donar-opciones {
+        gap: 1.2rem;
+    }
+    .donar-opcion {
+        width: 120px;
+        font-size: 1em;
+    }
+    .donar-opcion i {
+        font-size: 2em;
+    }
+}
+@media (max-width: 600px) {
+    .hero-donar-opciones {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .donar-opcion {
+        width: 100%;
+    }
 }
 
 
