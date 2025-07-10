@@ -11,7 +11,7 @@
 }
 
 .about-us-section {
-    background-image: url('../img/Fotos_banco/21.png');
+    background-color: white;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -28,7 +28,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--verde-acento);
+    background-color: white;
     opacity: 0.8;
     z-index: 1;
 }
@@ -43,8 +43,8 @@
 }
 
 .about-us-section h2 {
-    color: var(--beige);
-    font-size: 2.8em;
+    color: var(--vinotinto);
+    font-size: 3em;
     margin-bottom: 15px;
     position: relative;
     display: inline-block;
@@ -74,7 +74,7 @@
     height: 500px;
     margin: 0 auto;
     padding: 0px 30px;
-    background-color: white;
+    background-color: var(--vinotinto);
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     text-align: left;
@@ -117,7 +117,7 @@
 .about-us-text {
     flex: 2 1 0;
     padding-right: 50px;
-    color: #000000;
+    color: #ffffff;
 }
 
 .about-us-image {
@@ -127,7 +127,7 @@
 
 /* Estilos para los h3 dentro del texto de las diapositivas del carrusel */
 .carousel-slide .about-us-text h3 {
-    background-color: var(--vinotinto); /* Fondo color vinotinto */
+     /* Fondo color vinotinto */
     color: var(--beige); /* Color de texto que contraste bien */
     padding: 8px 15px; /* Relleno interno para el fondo */
     border-radius: 8px; /* Bordes redondeados */
@@ -139,7 +139,7 @@
 
 /* NUEVA REGLA: Estilos para los párrafos dentro del texto del carrusel */
 .carousel-slide .about-us-text p {
-    background-color: rgba(246, 198, 103, 0.2); /* Amarillo mostaza (var(--dorado)) con 20% de opacidad */
+     /* Amarillo mostaza (var(--dorado)) con 20% de opacidad */
     padding: 0px 12px; /* Pequeño relleno para que el fondo no esté pegado al texto */
     border-radius: 5px; /* Ligeros bordes redondeados */
     margin-bottom: 0px; /* Espacio entre párrafos con fondo */

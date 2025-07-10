@@ -12,9 +12,7 @@
     z-index: 0;
 }
 
-.volunteering-bg {
-    /* No es necesario si la imagen va directamente en la sección */
-}
+
 
 .volunteering-overlay {
     position: absolute;

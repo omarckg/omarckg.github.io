@@ -169,11 +169,11 @@ nav a:hover {
 /* Estilos para la imagen de ABACO en el banner */
 .abaco-logo-banner {
     position: absolute;
-    top: 100px; /* Ajusta la distancia desde arriba para que quede debajo del navbar */
-    right: 360px; /* Ajusta la distancia para que haya 20px entre cada imagen y el borde derecho */
-    width: 150px; /* Ajusta el tamaño según sea necesario */
+    top: 15px; /* Ajusta la distancia desde arriba para que quede debajo del navbar */
+    right: 380px; /* Ajusta la distancia para que haya 20px entre cada imagen y el borde derecho */
+    width: 120px; /* Ajusta el tamaño según sea necesario */
     height: auto;
-    z-index: 5; /* Asegura que esté sobre el fondo pero bajo el navbar */
+    z-index: 100; /* Asegura que esté sobre el fondo pero bajo el navbar */
     opacity: 0.8; /* Ajusta la opacidad si quieres que se mezcle un poco */
     transition: opacity 0.3s ease;
 }
@@ -185,9 +185,9 @@ nav a:hover {
 /* Estilos para la imagen de Pastoral Social en el banner */
 .pastoral-logo-banner {
     position: absolute;
-    top: 80px; /* Debe tener el mismo 'top' que la imagen de ABACO */
-    right: 190px; /* Posiciona al lado de la imagen de Arquidiocesis, dejando 20px de espacio */
-    width: 150px; /* Ajusta el tamaño para que sea similar al de ABACO */
+    top: 13px; /* Debe tener el mismo 'top' que la imagen de ABACO */
+    right: 210px; /* Posiciona al lado de la imagen de Arquidiocesis, dejando 20px de espacio */
+    width: 100px; /* Ajusta el tamaño para que sea similar al de ABACO */
     height: auto;
     z-index: 5; /* Mismo z-index que ABACO */
     opacity: 0.8; /* Misma opacidad que ABACO */
@@ -201,11 +201,11 @@ nav a:hover {
 /* Estilos para la imagen de Arquidiocesis en el banner */
 .arquidiocesis-logo-banner {
     position: absolute;
-    top: 50px; /* Mismo 'top' que las otras imágenes */
+    top: -10px; /* Mismo 'top' que las otras imágenes */
     right: 50px; /* La más a la derecha, a 20px del borde derecho */
-    width: 150px; /* Ajusta el tamaño para que sea similar a las otras */
+    width: 130px; /* Ajusta el tamaño para que sea similar a las otras */
     height: auto;
-    z-index: 5; /* Mismo z-index que las otras */
+    z-index: 100; /* Mismo z-index que las otras */
     opacity: 0.8; /* Misma opacidad que las otras */
     transition: opacity 0.3s ease;
 }
@@ -415,6 +415,7 @@ header.navbar-modern.navbar-transparent .navbar-logo .text-gradient {
     justify-content: center;
     gap: 2rem;
     width: 100%;
+    margin-right: 500px;
     transition: background 0.4s, box-shadow 0.4s;
     
 }
@@ -1979,6 +1980,7 @@ main, .carousel, .main-cards, .donation-hero, .donation-hero-buttons {
 
 .contacto-mapa-solo h2 {
     color: var(--vinotinto);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.434);
     font-size: 2em;
     margin-bottom: 18px;
     text-align: center;

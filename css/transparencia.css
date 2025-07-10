@@ -1,12 +1,13 @@
 .transparency-section {
     position: relative; /* Necesario para el pseudo-elemento overlay */
-    background-image: url('../img/Fotos_banco/24.png'); /* Puedes cambiar 'b4.jpg' por la ruta de tu imagen deseada */
+     /* Puedes cambiar 'b4.jpg' por la ruta de tu imagen deseada */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     padding: 60px 30px; /* Reducido de 80px a 50px para reducir el espacio vertical */
     text-align: center;
-    z-index: 0; /* Asegura que la sección y su imagen de fondo sean la capa base */
+    z-index: 0;
+     /* Asegura que la sección y su imagen de fondo sean la capa base */
 }
 
 /* Capa semitransparente de color verde sobre la imagen de fondo */
@@ -17,7 +18,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(62, 103, 0, 0.8); /* var(--verde-acento) con 80% de opacidad */
+    background-color: white; /* var(--verde-acento) con 80% de opacidad */
     z-index: 1; /* El overlay debe estar sobre la imagen pero debajo del contenido */
 }
 
@@ -34,16 +35,18 @@
 }
 
 .transparency-container {
-    max-width: 1000px; /* Corregido de '1000+px' a '1000px' */
+    max-width: 1500px; /* Corregido de '1000+px' a '1000px' */
     margin: 0 auto;
+    
+    
 }
 
 .transparency-section .section-title {
-    color: var(--beige); /* Título en beige para contraste */
-    font-size: 2.8em;
+    color: var(--vinotinto); /* Título en beige para contraste */
+    font-size: 3em;
     font-weight: bold;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.404);
     background: none; /* Asegura que no tenga fondo heredado */
     padding: 0;
     display: inline-block;
@@ -59,17 +62,18 @@
     display: flex; /* Usamos flex para una fila con un elemento en el medio */
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 100px;
+    margin-top: 30px ;
     flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en pantallas pequeñas */
 }
 
 .report-card {
-    background-color: rgba(255, 255, 255, 0.95); /* Blanco semitransparente */
+    background-color: var(--vinotinto); /* Blanco semitransparente */
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-    width: 180px; /* Ancho fijo para las tarjetas de informe */
+    width: 240px; /* Ancho fijo para las tarjetas de informe */
     height: 160px; /* Altura fija */
     display: flex;
     flex-direction: column;
@@ -88,7 +92,7 @@
 
 .report-card i {
     font-size: 3em; /* Tamaño grande para los iconos */
-    color: var(--vinotinto); /* Color vinotinto para los iconos */
+    color: white; /* Color vinotinto para los iconos */
     margin-bottom: 10px;
 }
 
@@ -99,11 +103,12 @@
     top: 50%; /* Posiciona la lupa en el centro vertical */
     left: 50%; /* Posiciona la lupa en el centro horizontal */
     transform: translate(-50%, -50%); /* Ajusta para centrar la lupa */
-    color: var(--vinotinto-claro); /* Color más claro para la lupa */
+    color: white; /* Color más claro para la lupa */
     opacity: 0.8;
 }
 
 .report-card p {
+    color: white;
     font-size: 0.95em;
     line-height: 1.3;
     margin: 0;
@@ -126,7 +131,7 @@
 }
 
 .figure-card {
-    background-color: rgba(255, 255, 255, 0.95); /* Blanco semitransparente */
+    background-color: var(--vinotinto); /* Blanco semitransparente */
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     padding: 30px;
@@ -145,12 +150,12 @@
 
 .figure-card i {
     font-size: 5em; /* Iconos grandes */
-    color: var(--vinotinto); /* Color vinotinto para los iconos */
+    color: white; /* Color vinotinto para los iconos */
     margin-bottom: 20px;
 }
 
 .figure-card h3 {
-    color: var(--vinotinto); /* Color vinotinto para el texto de las cifras */
+    color: white; /* Color vinotinto para el texto de las cifras */
     font-size: 1.6em;
     font-weight: bold;
     line-height: 1.3;
