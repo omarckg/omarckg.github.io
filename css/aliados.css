@@ -36,9 +36,8 @@
     display: flex;
     align-items: center;
     gap: 30px;
-    width: 100%; /* Limita el ancho al contenedor padre */
-    max-width: 100%; /* Asegura que no se pase */
-    animation: aliados-scroll 4s linear infinite;
+    width: max-content; /* Importante para que el contenido se desplace correctamente */
+    animation: aliados-scroll 30s linear infinite;
 }
 
 .aliado-logo {
