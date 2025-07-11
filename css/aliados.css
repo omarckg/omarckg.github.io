@@ -191,3 +191,108 @@
         font-size: 1.5em;
     }
 } 
+
+.aliados-mencion-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(120deg, #5a1818 50%, #ef8639 80%, #f1efb5 100%);
+    border-radius: 0; /* Sin bordes redondeados para ocupar todo el ancho */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.79);
+    padding: 40px 10vw; /* Espaciado lateral proporcional */
+    margin: 40px 0 0 0; /* Solo margen arriba si lo deseas */
+    width: 78.9vw;
+    min-height: 180px;
+    color: #fff8e1;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+}
+
+.aliados-mencion-banner-left {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.aliados-mencion-titulo {
+    font-size: 2.2em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #fff8e1;
+    text-shadow: 1px 1px 6px #3d0d0f44;
+    margin-bottom: 10px;
+}
+
+.aliados-mencion-titulo span {
+    font-size: 1.1em;
+    letter-spacing: 4px;
+    color: #f1efb5;
+}
+
+.aliados-mencion-banner-left hr {
+    width: 60px;
+    border: 2px solid #f1efb5;
+    margin: 18px 0;
+}
+
+.aliados-mencion-texto {
+    font-size: 1.1em;
+    color: #fff8e1;
+    font-style: italic;
+    max-width: 420px;
+}
+
+.aliados-mencion-banner-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+}
+
+.aliados-mencion-banner-right i {
+    font-size: 4em;
+    color: #f6c667;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 8px #3d0d0f33;
+}
+
+.aliados-mencion-org {
+    color: #fff8e1;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.aliados-mencion-slogan {
+    font-size: 0.9em;
+    color: #f1efb5;
+    font-weight: normal;
+    margin-top: 2px;
+}
+
+@media (max-width: 700px) {
+    .aliados-mencion-banner {
+        flex-direction: column;
+        padding: 25px 10px;
+        min-height: 0;
+        text-align: center;
+    }
+    .aliados-mencion-banner-left, .aliados-mencion-banner-right {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .aliados-mencion-titulo {
+        font-size: 1.3em;
+    }
+    .aliados-mencion-banner-right i {
+        font-size: 2.5em;
+    }
+} 

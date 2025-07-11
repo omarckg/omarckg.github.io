@@ -33,15 +33,16 @@
 
 .volunteering-section .section-title {
     color: var(--beige);
-    font-size: 2.8em;
+    font-size: 3.8em;
     font-weight: bold;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     background: none;
     padding: 0;
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-top: 150px; /* Puedes ajustar el valor según lo que necesites */
 }
 
 .stats-banner {
@@ -52,8 +53,9 @@
     padding: 40px 20px;
     position: relative;
     background: transparent;
-    margin: 40px auto;
+    margin: 10px auto;
     max-width: 1200px;
+    margin-top: 0px
 }
 
 .stats-banner .stat-item {
@@ -66,10 +68,11 @@
 
 .stats-banner .stat-number {
     color: var(--vinotinto);
-    font-size: 6em; /* Manteniendo el tamaño que habíamos puesto */
+    font-size: 10em; /* Manteniendo el tamaño que habíamos puesto */
     font-weight: bold;
     display: block; /* Para que ocupe su propia línea dentro del .stat-item */
     margin-bottom: 5px;
+    margin-top: 0px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     position: relative; /* Necesario para posicionar el pseudo-elemento '+' */
     /* Removí 'display: inline-block' si estaba, porque 'block' es más adecuado aquí */
@@ -89,7 +92,7 @@
 
 .stats-banner .stat-label {
     color: #f1efb5;
-    font-size: 1.4em;
+    font-size: 1.6em;
     font-weight: bold;
     text-transform: uppercase;
     display: block;
@@ -101,6 +104,8 @@
     height: 60px;
     background-color: var(--beige);
     margin: 0 10px;
+   
+    z-index: 1;   
 }
 
 .stats-banner .map-shape {
@@ -294,8 +299,8 @@
     }
 
     .stats-banner .separator {
-        width: 80%;
-        height: 2px;
+        width: 100%;
+        height: 20px;
     }
 
     .stats-banner .map-shape {

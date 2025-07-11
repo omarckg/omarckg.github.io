@@ -43,7 +43,7 @@
 
 .transparency-section .section-title {
     color: var(--vinotinto); /* Título en beige para contraste */
-    font-size: 3em;
+    font-size: 4em;
     font-weight: bold;
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.404);
@@ -91,7 +91,7 @@
 }
 
 .report-card i {
-    font-size: 3em; /* Tamaño grande para los iconos */
+    font-size: 7em; /* Tamaño grande para los iconos */
     color: white; /* Color vinotinto para los iconos */
     margin-bottom: 10px;
 }
@@ -99,24 +99,24 @@
 /* Icono de lupa superpuesto en el informe */
 .report-card .fa-search {
     position: absolute;
-    font-size: 1.5em; /* Tamaño más pequeño para la lupa */
+    font-size: 3em; /* Tamaño más pequeño para la lupa */
     top: 50%; /* Posiciona la lupa en el centro vertical */
     left: 50%; /* Posiciona la lupa en el centro horizontal */
     transform: translate(-50%, -50%); /* Ajusta para centrar la lupa */
-    color: white; /* Color más claro para la lupa */
+    color: rgba(255, 255, 255, 0); /* Color más claro para la lupa */
     opacity: 0.8;
 }
 
 .report-card p {
     color: white;
-    font-size: 0.95em;
+    font-size: 1.3em;
     line-height: 1.3;
     margin: 0;
 }
 
 .downloadable-text {
     color: var(--beige);
-    font-size: 0.9em;
+    font-size: 1em;
     font-style: italic;
     margin: 0 20px; /* Margen para separarlo de las tarjetas */
     white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
@@ -141,6 +141,7 @@
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 400px; /* Ajusta el valor según lo que necesites */
 }
 
 .figure-card:hover {
@@ -149,14 +150,14 @@
 }
 
 .figure-card i {
-    font-size: 5em; /* Iconos grandes */
+    font-size: 13em; /* Iconos grandes */
     color: white; /* Color vinotinto para los iconos */
     margin-bottom: 20px;
 }
 
 .figure-card h3 {
     color: white; /* Color vinotinto para el texto de las cifras */
-    font-size: 1.6em;
+    font-size: 2.3em;
     font-weight: bold;
     line-height: 1.3;
     margin: 0;
