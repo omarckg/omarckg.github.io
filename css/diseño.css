@@ -2069,28 +2069,9 @@ main, .carousel, .main-cards, .donation-hero, .donation-hero-buttons {
     line-height: 1.2;
 }
 
-@media (max-width: 900px) {
-    .hero-donar-opciones {
-        gap: 1.2rem;
-    }
-    .donar-opcion {
-        width: 120px;
-        font-size: 1em;
-    }
-    .donar-opcion i {
-        font-size: 2em;
-    }
-}
-@media (max-width: 600px) {
-    .hero-donar-opciones {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-    }
-    .donar-opcion {
-        width: 100%;
-    }
-}
+
+
+
 
 
 

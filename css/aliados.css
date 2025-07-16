@@ -218,12 +218,13 @@
 }
 
 .aliados-mencion-titulo {
-    font-size: 2.2em;
+    font-size: 2.9em;
     font-weight: bold;
     letter-spacing: 2px;
     color: #fff8e1;
     text-shadow: 1px 1px 6px #3d0d0f44;
     margin-bottom: 10px;
+    transform: translate(-60px, 0px);
 }
 
 .aliados-mencion-titulo span {
@@ -239,10 +240,13 @@
 }
 
 .aliados-mencion-texto {
-    font-size: 1.1em;
+    font-size: 1.6em;
     color: #fff8e1;
     font-style: italic;
     max-width: 420px;
+    margin: 0 auto;
+    text-align: center;
+    transform: translate(-100px, 0px); /* Cambia los valores para mover en X (horizontal) y Y (vertical) */
 }
 
 .aliados-mencion-banner-right {
@@ -261,9 +265,15 @@
     text-shadow: 1px 1px 8px #3d0d0f33;
 }
 
+
+.aliados-mencion-banner-right i {
+    font-size: 6em;
+    color: #ef8639;
+}
+
 .aliados-mencion-org {
     color: #fff8e1;
-    font-size: 1.2em;
+    font-size: 1.9em;
     font-weight: bold;
     text-align: center;
     margin-top: 5px;
